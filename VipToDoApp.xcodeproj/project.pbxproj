@@ -16,6 +16,14 @@
 		9C76416A27AFC66500C83021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C76416827AFC66500C83021 /* LaunchScreen.storyboard */; };
 		9C76417227AFC76D00C83021 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417127AFC76D00C83021 /* AppData.swift */; };
 		9C76417427AFCA6100C83021 /* CreateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417327AFCA6100C83021 /* CreateItem.swift */; };
+		9C76417627B1542E00C83021 /* ItemsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417527B1542E00C83021 /* ItemsBuilder.swift */; };
+		9C76417827B1544100C83021 /* ItemsContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417727B1544100C83021 /* ItemsContracts.swift */; };
+		9C76417C27B1549300C83021 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417A27B1549300C83021 /* ItemsViewController.swift */; };
+		9C76417D27B1549300C83021 /* ItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C76417B27B1549300C83021 /* ItemsViewController.xib */; };
+		9C76417F27B154CB00C83021 /* ItemsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417E27B154CB00C83021 /* ItemsInteractor.swift */; };
+		9C76418127B154E600C83021 /* ItemsPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76418027B154E600C83021 /* ItemsPresentation.swift */; };
+		9C76418327B154EF00C83021 /* ItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76418227B154EF00C83021 /* ItemsPresenter.swift */; };
+		9C76418527B154F500C83021 /* ItemsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76418427B154F500C83021 /* ItemsRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,14 @@
 		9C76416B27AFC66500C83021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C76417127AFC76D00C83021 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		9C76417327AFCA6100C83021 /* CreateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItem.swift; sourceTree = "<group>"; };
+		9C76417527B1542E00C83021 /* ItemsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsBuilder.swift; sourceTree = "<group>"; };
+		9C76417727B1544100C83021 /* ItemsContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsContracts.swift; sourceTree = "<group>"; };
+		9C76417A27B1549300C83021 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		9C76417B27B1549300C83021 /* ItemsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsViewController.xib; sourceTree = "<group>"; };
+		9C76417E27B154CB00C83021 /* ItemsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsInteractor.swift; sourceTree = "<group>"; };
+		9C76418027B154E600C83021 /* ItemsPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPresentation.swift; sourceTree = "<group>"; };
+		9C76418227B154EF00C83021 /* ItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPresenter.swift; sourceTree = "<group>"; };
+		9C76418427B154F500C83021 /* ItemsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +78,7 @@
 		9C76415927AFC66400C83021 /* VipToDoApp */ = {
 			isa = PBXGroup;
 			children = (
+				9C76417927B1545000C83021 /* Items */,
 				9C76415A27AFC66400C83021 /* AppDelegate.swift */,
 				9C76415C27AFC66400C83021 /* SceneDelegate.swift */,
 				9C76415E27AFC66400C83021 /* ViewController.swift */,
@@ -74,6 +91,21 @@
 				9C76417327AFCA6100C83021 /* CreateItem.swift */,
 			);
 			path = VipToDoApp;
+			sourceTree = "<group>";
+		};
+		9C76417927B1545000C83021 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				9C76417527B1542E00C83021 /* ItemsBuilder.swift */,
+				9C76417727B1544100C83021 /* ItemsContracts.swift */,
+				9C76417A27B1549300C83021 /* ItemsViewController.swift */,
+				9C76417B27B1549300C83021 /* ItemsViewController.xib */,
+				9C76417E27B154CB00C83021 /* ItemsInteractor.swift */,
+				9C76418027B154E600C83021 /* ItemsPresentation.swift */,
+				9C76418227B154EF00C83021 /* ItemsPresenter.swift */,
+				9C76418427B154F500C83021 /* ItemsRouter.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +168,7 @@
 			files = (
 				9C76416A27AFC66500C83021 /* LaunchScreen.storyboard in Resources */,
 				9C76416727AFC66500C83021 /* Assets.xcassets in Resources */,
+				9C76417D27B1549300C83021 /* ItemsViewController.xib in Resources */,
 				9C76416227AFC66400C83021 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,10 +182,17 @@
 			files = (
 				9C76417427AFCA6100C83021 /* CreateItem.swift in Sources */,
 				9C76415F27AFC66400C83021 /* ViewController.swift in Sources */,
+				9C76417F27B154CB00C83021 /* ItemsInteractor.swift in Sources */,
+				9C76418127B154E600C83021 /* ItemsPresentation.swift in Sources */,
+				9C76417627B1542E00C83021 /* ItemsBuilder.swift in Sources */,
+				9C76417C27B1549300C83021 /* ItemsViewController.swift in Sources */,
+				9C76418327B154EF00C83021 /* ItemsPresenter.swift in Sources */,
+				9C76417827B1544100C83021 /* ItemsContracts.swift in Sources */,
 				9C76416527AFC66400C83021 /* VipToDoApp.xcdatamodeld in Sources */,
 				9C76415B27AFC66400C83021 /* AppDelegate.swift in Sources */,
 				9C76415D27AFC66400C83021 /* SceneDelegate.swift in Sources */,
 				9C76417227AFC76D00C83021 /* AppData.swift in Sources */,
+				9C76418527B154F500C83021 /* ItemsRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
