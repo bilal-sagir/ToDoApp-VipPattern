@@ -79,16 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				9C76417927B1545000C83021 /* Items */,
-				9C76415A27AFC66400C83021 /* AppDelegate.swift */,
-				9C76415C27AFC66400C83021 /* SceneDelegate.swift */,
-				9C76415E27AFC66400C83021 /* ViewController.swift */,
-				9C76416027AFC66400C83021 /* Main.storyboard */,
-				9C76416627AFC66500C83021 /* Assets.xcassets */,
-				9C76416827AFC66500C83021 /* LaunchScreen.storyboard */,
-				9C76416B27AFC66500C83021 /* Info.plist */,
-				9C76416327AFC66400C83021 /* VipToDoApp.xcdatamodeld */,
-				9C76417127AFC76D00C83021 /* AppData.swift */,
-				9C76417327AFCA6100C83021 /* CreateItem.swift */,
+				9C76418627B1846000C83021 /* CoreData */,
+				9C76418727B1849300C83021 /* Resources */,
 			);
 			path = VipToDoApp;
 			sourceTree = "<group>";
@@ -106,6 +98,30 @@
 				9C76418427B154F500C83021 /* ItemsRouter.swift */,
 			);
 			path = Items;
+			sourceTree = "<group>";
+		};
+		9C76418627B1846000C83021 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9C76417127AFC76D00C83021 /* AppData.swift */,
+				9C76417327AFCA6100C83021 /* CreateItem.swift */,
+				9C76416327AFC66400C83021 /* VipToDoApp.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		9C76418727B1849300C83021 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C76415A27AFC66400C83021 /* AppDelegate.swift */,
+				9C76415C27AFC66400C83021 /* SceneDelegate.swift */,
+				9C76415E27AFC66400C83021 /* ViewController.swift */,
+				9C76416027AFC66400C83021 /* Main.storyboard */,
+				9C76416627AFC66500C83021 /* Assets.xcassets */,
+				9C76416827AFC66500C83021 /* LaunchScreen.storyboard */,
+				9C76416B27AFC66500C83021 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,7 +359,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5L637C2H24;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VipToDoApp/Info.plist;
+				INFOPLIST_FILE = VipToDoApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -371,7 +387,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5L637C2H24;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VipToDoApp/Info.plist;
+				INFOPLIST_FILE = VipToDoApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
