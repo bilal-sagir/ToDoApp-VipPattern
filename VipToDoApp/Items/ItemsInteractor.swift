@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class ItemsInteractor: ItemsInteractorProtocol{
+    var presenter: ItemsPresenterProtocol?
+    
+    func viewDidLoad() {
+    }
+    
+    
+}
