@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ItemsInteractor: ItemsInteractorProtocol{
+class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
     var presenter: ItemsPresenterProtocol?
     
     func viewDidLoad() {

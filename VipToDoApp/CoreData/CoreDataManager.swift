@@ -8,9 +8,9 @@
 import Foundation
 import CoreData
 
-struct CreateItem{
+struct CoreDataManager{
     var context: NSManagedObjectContext = AppData.shared.container.viewContext
-    static let shared = CreateItem()
+    static let shared = CoreDataManager()
     
     //MARK: - Create Item (Core Data)
     func createItem(title: String, detail: String, date: Date){
