@@ -14,6 +14,8 @@
 		9C76416527AFC66400C83021 /* VipToDoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C76416327AFC66400C83021 /* VipToDoApp.xcdatamodeld */; };
 		9C76416727AFC66500C83021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C76416627AFC66500C83021 /* Assets.xcassets */; };
 		9C76416A27AFC66500C83021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C76416827AFC66500C83021 /* LaunchScreen.storyboard */; };
+		9C76417227AFC76D00C83021 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417127AFC76D00C83021 /* AppData.swift */; };
+		9C76417427AFCA6100C83021 /* CreateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417327AFCA6100C83021 /* CreateItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		9C76416627AFC66500C83021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C76416927AFC66500C83021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C76416B27AFC66500C83021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C76417127AFC76D00C83021 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		9C76417327AFCA6100C83021 /* CreateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				9C76416827AFC66500C83021 /* LaunchScreen.storyboard */,
 				9C76416B27AFC66500C83021 /* Info.plist */,
 				9C76416327AFC66400C83021 /* VipToDoApp.xcdatamodeld */,
+				9C76417127AFC76D00C83021 /* AppData.swift */,
+				9C76417327AFCA6100C83021 /* CreateItem.swift */,
 			);
 			path = VipToDoApp;
 			sourceTree = "<group>";
@@ -141,10 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C76417427AFCA6100C83021 /* CreateItem.swift in Sources */,
 				9C76415F27AFC66400C83021 /* ViewController.swift in Sources */,
 				9C76416527AFC66400C83021 /* VipToDoApp.xcdatamodeld in Sources */,
 				9C76415B27AFC66400C83021 /* AppDelegate.swift in Sources */,
 				9C76415D27AFC66400C83021 /* SceneDelegate.swift in Sources */,
+				9C76417227AFC76D00C83021 /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
