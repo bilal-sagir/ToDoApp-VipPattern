@@ -11,7 +11,4 @@ class ItemsRouter: ItemsRouterProtocol{
     weak var viewController: ItemsViewController?
     var dataStore: ItemsDataStoreProtocol?
     
-    func navigate() {
-        
-    }
 }

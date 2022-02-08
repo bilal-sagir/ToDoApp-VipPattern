@@ -18,6 +18,9 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
         interactor?.viewDidLoad()
     }
     
+    @IBAction func fetchITem(_ sender: Any) {
+        print(CoreDataRepo.shared.fetchItems())
+    }
     func handleOutput() {
         
     }

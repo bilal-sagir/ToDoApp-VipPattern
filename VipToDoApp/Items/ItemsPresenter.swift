@@ -10,6 +10,7 @@ import Foundation
 class ItemsPresenter: ItemsPresenterProtocol{
     weak var viewController: ItemsViewProtocol?
     
-    func handeOutput() {
+    func handleOutput() {
+        
     }
 }

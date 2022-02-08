@@ -12,8 +12,8 @@
 		9C76416527AFC66400C83021 /* VipToDoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C76416327AFC66400C83021 /* VipToDoApp.xcdatamodeld */; };
 		9C76416727AFC66500C83021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C76416627AFC66500C83021 /* Assets.xcassets */; };
 		9C76416A27AFC66500C83021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C76416827AFC66500C83021 /* LaunchScreen.storyboard */; };
-		9C76417227AFC76D00C83021 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417127AFC76D00C83021 /* AppData.swift */; };
-		9C76417427AFCA6100C83021 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417327AFCA6100C83021 /* CoreDataManager.swift */; };
+		9C76417227AFC76D00C83021 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417127AFC76D00C83021 /* CoreDataManager.swift */; };
+		9C76417427AFCA6100C83021 /* CoreDataRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417327AFCA6100C83021 /* CoreDataRepo.swift */; };
 		9C76417627B1542E00C83021 /* ItemsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417527B1542E00C83021 /* ItemsBuilder.swift */; };
 		9C76417827B1544100C83021 /* ItemsContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417727B1544100C83021 /* ItemsContracts.swift */; };
 		9C76417C27B1549300C83021 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417A27B1549300C83021 /* ItemsViewController.swift */; };
@@ -34,8 +34,8 @@
 		9C76416627AFC66500C83021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C76416927AFC66500C83021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C76416B27AFC66500C83021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C76417127AFC76D00C83021 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
-		9C76417327AFCA6100C83021 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		9C76417127AFC76D00C83021 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		9C76417327AFCA6100C83021 /* CoreDataRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepo.swift; sourceTree = "<group>"; };
 		9C76417527B1542E00C83021 /* ItemsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsBuilder.swift; sourceTree = "<group>"; };
 		9C76417727B1544100C83021 /* ItemsContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsContracts.swift; sourceTree = "<group>"; };
 		9C76417A27B1549300C83021 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 		9C76418627B1846000C83021 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				9C76417127AFC76D00C83021 /* AppData.swift */,
-				9C76417327AFCA6100C83021 /* CoreDataManager.swift */,
+				9C76417127AFC76D00C83021 /* CoreDataManager.swift */,
+				9C76417327AFCA6100C83021 /* CoreDataRepo.swift */,
 				9C76416327AFC66400C83021 /* VipToDoApp.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -196,7 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C76418A27B1ABF700C83021 /* AppContainer.swift in Sources */,
-				9C76417427AFCA6100C83021 /* CoreDataManager.swift in Sources */,
+				9C76417427AFCA6100C83021 /* CoreDataRepo.swift in Sources */,
 				9C76417F27B154CB00C83021 /* ItemsInteractor.swift in Sources */,
 				9C76418127B154E600C83021 /* ItemsPresentation.swift in Sources */,
 				9C76418C27B1AC3300C83021 /* AppRouter.swift in Sources */,
@@ -207,7 +207,7 @@
 				9C76416527AFC66400C83021 /* VipToDoApp.xcdatamodeld in Sources */,
 				9C76415B27AFC66400C83021 /* AppDelegate.swift in Sources */,
 				9C76415D27AFC66400C83021 /* SceneDelegate.swift in Sources */,
-				9C76417227AFC76D00C83021 /* AppData.swift in Sources */,
+				9C76417227AFC76D00C83021 /* CoreDataManager.swift in Sources */,
 				9C76418527B154F500C83021 /* ItemsRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

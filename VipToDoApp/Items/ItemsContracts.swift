@@ -11,23 +11,30 @@ protocol ItemsInteractorProtocol{
     func viewDidLoad()
 }
 
-typealias ItemsRouterProtocol = ItemsRoutingProtocol & ItemsDataPassingProtocol
-
-protocol ItemsRoutingProtocol{
-    func navigate()
+protocol ItemsRouterProtocol{
+    
 }
 
 protocol ItemsDataPassingProtocol{
 }
 
 protocol ItemsPresenterProtocol{
-    func handeOutput()
+    func handleOutput()
 }
 
 protocol ItemsViewProtocol: NSObject{
     func handleOutput()
 }
 
+struct ToDoItem{
+    let title: String
+    let detail: String
+    let date: Date
+}
+
 protocol ItemsDataStoreProtocol{
-    
+    func createItem(todo: ToDoItem)
+    func fetchItems() -> [ToDoItem]
+    func deleteItem(title: String) -> Bool
+    func editItem(title: String, item: ToDoItem?) -> Bool
 }
