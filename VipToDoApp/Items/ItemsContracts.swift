@@ -6,12 +6,16 @@
 //
 
 import Foundation
+import UIKit
 
-enum ItemsInteractorOutput{
-    case showItems([Item])
-}
+
 protocol ItemsInteractorProtocol{
     func viewDidLoad()
+    func beginEditing()
+    func endEditing()
+    func cancelButtonClicked()
+    func searchButtonClicked()
+    func textDidChange(searchText: String)
 }
 
 protocol ItemsRouterProtocol{
@@ -21,27 +25,27 @@ protocol ItemsRouterProtocol{
 protocol ItemsDataPassingProtocol{
 }
 
+enum ItemsInteractorOutput{
+    case showItems([Item])
+    case searchBar(searchActive: Bool, showCancelButton: Bool)
+    case endEditing(searchActive: Bool, showCancelButton: Bool, searchBarText: String?)
+    case cancelButton(searchActive: Bool)
+    case textDidChange(searchActive: Bool, filteredList: [Item])
+}
+
 protocol ItemsPresenterProtocol{
     func handleOutput(_ output: ItemsInteractorOutput)
 }
 
 enum ItemsPresenterOutput{
     case showItems([ItemsPresentation])
+    case searchBar(searchActive: Bool, showCancelButton: Bool)
+    case endEditing(searchActive: Bool, showCancelButton: Bool, searchBarText: String?)
+    case cancelButton(searchActive: Bool)
+    case textDidChange(searchActive: Bool, filteredList: [ItemsPresentation])
 }
 
 protocol ItemsViewProtocol: NSObject{
     func handleOutput(_ output: ItemsPresenterOutput)
 }
 
-struct ToDoItem{
-    let title: String
-    let detail: String
-    let date: Date
-}
-
-protocol ItemsDataStoreProtocol{
-    func createItem(todo: ToDoItem)
-    func fetchItems() -> [Item]
-    func deleteItem(title: String) -> Bool
-    func editItem(title: String, item: ToDoItem?) -> Bool
-}

@@ -6,31 +6,64 @@
 //
 
 import Foundation
+import UIKit
 
-class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
-
+class ItemsInteractor: ItemsInteractorProtocol{
+ 
     var presenter: ItemsPresenterProtocol?
     
+    var searchActive = false
+    var showCancelButton = false
+    var searchBarText: String?
+    
     func viewDidLoad() {
-        let items = fetchItems()
+        let items = CoreDataRepo.shared.fetchItems()
         self.presenter?.handleOutput(.showItems(items))
     }
     
-    func createItem(todo: ToDoItem) {
-        CoreDataRepo.shared.createItem(title: todo.title, detail: todo.detail, date: todo.date)
+    func beginEditing() {
+        searchActive = true
+        showCancelButton = true
+        self.presenter?.handleOutput(.searchBar(searchActive: searchActive, showCancelButton: showCancelButton))
     }
     
-    func fetchItems() -> [Item] {
-        CoreDataRepo.shared.fetchItems()
+    func endEditing() {
+        searchActive = false
+        showCancelButton = false
+        searchBarText = nil
+        self.presenter?.handleOutput(.endEditing(searchActive: searchActive,
+                                                 showCancelButton: showCancelButton,
+                                                 searchBarText: searchBarText))
     }
     
-    func deleteItem(title: String) -> Bool {
-        CoreDataRepo.shared.deleteItem(title)
-        return true
+    func cancelButtonClicked() {
+        searchActive = false
+        self.presenter?.handleOutput(.cancelButton(searchActive: searchActive))
     }
     
-    func editItem(title: String, item: ToDoItem?) -> Bool {
-        CoreDataRepo.shared.editItem(title, newTitle: item?.title, newDetail: item?.detail, newDate: item?.date)
-        return true
+    func searchButtonClicked() {
+        searchActive = false
+        self.presenter?.handleOutput(.cancelButton(searchActive: searchActive))
     }
+    
+    func textDidChange(searchText: String) {
+        let items = CoreDataRepo.shared.fetchItems()
+        var filteredList : Array<Item>
+        filteredList = items.filter({ item in
+            let tmp: NSString = item.title! as NSString
+            let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
+            return range.location != NSNotFound
+        })
+        if filteredList.count == 0 {
+            searchActive = false
+            self.presenter?.handleOutput(.textDidChange(searchActive: searchActive,
+                                                        filteredList: filteredList))
+        }else{
+            searchActive = true
+            self.presenter?.handleOutput(.textDidChange(searchActive: searchActive,
+                                                        filteredList: filteredList))
+        }
+        
+    }
+    
 }

@@ -28,15 +28,6 @@ struct CoreDataRepo{
         do{
             let res = try context.fetch(request)
             
-            for data in res as! [NSManagedObject]{
-                
-                let item = data as! Item
-                
-                print(item.title as Any)
-                print(item.detail as Any)
-                print(item.date as Any)
-                print("--")
-            }
             
             return(res as? [Item] ?? [])
         }
