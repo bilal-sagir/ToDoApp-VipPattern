@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C50371427B4809D00E7BEAF /* ItemDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371327B4809D00E7BEAF /* ItemDetailBuilder.swift */; };
+		9C50371627B480AF00E7BEAF /* ItemDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371527B480AF00E7BEAF /* ItemDetailContracts.swift */; };
+		9C50371827B480C600E7BEAF /* ItemDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371727B480C600E7BEAF /* ItemDetailInteractor.swift */; };
+		9C50371A27B480D400E7BEAF /* ItemDetailPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371927B480D400E7BEAF /* ItemDetailPresentation.swift */; };
+		9C50371C27B480DD00E7BEAF /* ItemDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371B27B480DD00E7BEAF /* ItemDetailPresenter.swift */; };
+		9C50371E27B480E700E7BEAF /* ItemDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371D27B480E700E7BEAF /* ItemDetailRouter.swift */; };
+		9C50372127B480FD00E7BEAF /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371F27B480FD00E7BEAF /* ItemDetailViewController.swift */; };
+		9C50372227B480FD00E7BEAF /* ItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C50372027B480FD00E7BEAF /* ItemDetailViewController.xib */; };
 		9C76415B27AFC66400C83021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76415A27AFC66400C83021 /* AppDelegate.swift */; };
 		9C76415D27AFC66400C83021 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76415C27AFC66400C83021 /* SceneDelegate.swift */; };
 		9C76416527AFC66400C83021 /* VipToDoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C76416327AFC66400C83021 /* VipToDoApp.xcdatamodeld */; };
@@ -27,6 +35,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C50371327B4809D00E7BEAF /* ItemDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailBuilder.swift; sourceTree = "<group>"; };
+		9C50371527B480AF00E7BEAF /* ItemDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailContracts.swift; sourceTree = "<group>"; };
+		9C50371727B480C600E7BEAF /* ItemDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailInteractor.swift; sourceTree = "<group>"; };
+		9C50371927B480D400E7BEAF /* ItemDetailPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailPresentation.swift; sourceTree = "<group>"; };
+		9C50371B27B480DD00E7BEAF /* ItemDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailPresenter.swift; sourceTree = "<group>"; };
+		9C50371D27B480E700E7BEAF /* ItemDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailRouter.swift; sourceTree = "<group>"; };
+		9C50371F27B480FD00E7BEAF /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		9C50372027B480FD00E7BEAF /* ItemDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailViewController.xib; sourceTree = "<group>"; };
 		9C76415727AFC66400C83021 /* VipToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VipToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C76415A27AFC66400C83021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C76415C27AFC66400C83021 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +75,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C50371127B46E3B00E7BEAF /* ItemDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ItemDetail;
+			sourceTree = "<group>";
+		};
+		9C50371227B4807200E7BEAF /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				9C50371327B4809D00E7BEAF /* ItemDetailBuilder.swift */,
+				9C50371527B480AF00E7BEAF /* ItemDetailContracts.swift */,
+				9C50371F27B480FD00E7BEAF /* ItemDetailViewController.swift */,
+				9C50372027B480FD00E7BEAF /* ItemDetailViewController.xib */,
+				9C50371727B480C600E7BEAF /* ItemDetailInteractor.swift */,
+				9C50371927B480D400E7BEAF /* ItemDetailPresentation.swift */,
+				9C50371B27B480DD00E7BEAF /* ItemDetailPresenter.swift */,
+				9C50371D27B480E700E7BEAF /* ItemDetailRouter.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		9C76414E27AFC66400C83021 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				9C76417927B1545000C83021 /* Items */,
+				9C50371227B4807200E7BEAF /* Detail */,
+				9C50371127B46E3B00E7BEAF /* ItemDetail */,
 				9C76418627B1846000C83021 /* CoreData */,
 				9C76418727B1849300C83021 /* Resources */,
 			);
@@ -184,6 +224,7 @@
 			files = (
 				9C76416A27AFC66500C83021 /* LaunchScreen.storyboard in Resources */,
 				9C76416727AFC66500C83021 /* Assets.xcassets in Resources */,
+				9C50372227B480FD00E7BEAF /* ItemDetailViewController.xib in Resources */,
 				9C76417D27B1549300C83021 /* ItemsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,15 +236,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C50371427B4809D00E7BEAF /* ItemDetailBuilder.swift in Sources */,
 				9C76418A27B1ABF700C83021 /* AppContainer.swift in Sources */,
 				9C76417427AFCA6100C83021 /* CoreDataRepo.swift in Sources */,
+				9C50371A27B480D400E7BEAF /* ItemDetailPresentation.swift in Sources */,
+				9C50371E27B480E700E7BEAF /* ItemDetailRouter.swift in Sources */,
 				9C76417F27B154CB00C83021 /* ItemsInteractor.swift in Sources */,
 				9C76418127B154E600C83021 /* ItemsPresentation.swift in Sources */,
 				9C76418C27B1AC3300C83021 /* AppRouter.swift in Sources */,
+				9C50372127B480FD00E7BEAF /* ItemDetailViewController.swift in Sources */,
 				9C76417627B1542E00C83021 /* ItemsBuilder.swift in Sources */,
+				9C50371627B480AF00E7BEAF /* ItemDetailContracts.swift in Sources */,
 				9C76417C27B1549300C83021 /* ItemsViewController.swift in Sources */,
+				9C50371C27B480DD00E7BEAF /* ItemDetailPresenter.swift in Sources */,
 				9C76418327B154EF00C83021 /* ItemsPresenter.swift in Sources */,
 				9C76417827B1544100C83021 /* ItemsContracts.swift in Sources */,
+				9C50371827B480C600E7BEAF /* ItemDetailInteractor.swift in Sources */,
 				9C76416527AFC66400C83021 /* VipToDoApp.xcdatamodeld in Sources */,
 				9C76415B27AFC66400C83021 /* AppDelegate.swift in Sources */,
 				9C76415D27AFC66400C83021 /* SceneDelegate.swift in Sources */,

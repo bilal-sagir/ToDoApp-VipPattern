@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 
 protocol ItemsInteractorProtocol{
@@ -49,3 +48,10 @@ protocol ItemsViewProtocol: NSObject{
     func handleOutput(_ output: ItemsPresenterOutput)
 }
 
+enum ItemRoute{
+    case showItemDetail(item: ItemsPresentation)
+}
+
+protocol ItemsRoutingProtocol{
+    func navigate(to route: ItemRoute)
+}

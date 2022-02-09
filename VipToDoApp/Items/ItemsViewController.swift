@@ -18,7 +18,7 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
     }
     
     var interactor: ItemsInteractorProtocol?
-    var router: ItemsRouterProtocol?
+    var router: ItemsRoutingProtocol?
     
     private var items: [ItemsPresentation] = []
     private var filteredList: [ItemsPresentation] = []
@@ -31,8 +31,9 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
         interactor?.viewDidLoad()
     }
     
-    @IBAction func fetchITem(_ sender: Any) {
-        print(CoreDataRepo.shared.fetchItems())
+
+    @IBAction func addNewItem(_ sender: UIButton) {
+           
     }
     
     func handleOutput(_ output: ItemsPresenterOutput) {
@@ -68,7 +69,7 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
         }
     }
 }
-
+//MARK: - TableView Data Source
 extension ItemsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath)
@@ -85,6 +86,16 @@ extension ItemsViewController: UITableViewDataSource {
             return self.filteredList.count
         }
         return items.count
+    }
+}
+//MARK: - TableView Delegate
+extension ItemsViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if searchActive && searchBar.text != ""{
+            router?.navigate(to: .showItemDetail(item: filteredList[indexPath.row]))
+        }else{
+            router?.navigate(to: .showItemDetail(item: items[indexPath.row]))
+        }
     }
 }
 

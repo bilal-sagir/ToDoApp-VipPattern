@@ -7,7 +7,15 @@
 
 import Foundation
 
-class ItemsRouter: ItemsRouterProtocol{
+class ItemsRouter: ItemsRoutingProtocol{
     weak var viewController: ItemsViewController?
+    
+    func navigate(to route: ItemRoute) {
+        switch route {
+        case .showItemDetail(item: let item):
+            let destinationVC = ItemDetailBuilder.build(with: item)
+            viewController?.show(destinationVC, sender: nil)
+        }
+    }
     
 }
