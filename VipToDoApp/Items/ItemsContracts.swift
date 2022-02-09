@@ -7,6 +7,9 @@
 
 import Foundation
 
+enum ItemsInteractorOutput{
+    case showItems([Item])
+}
 protocol ItemsInteractorProtocol{
     func viewDidLoad()
 }
@@ -19,11 +22,15 @@ protocol ItemsDataPassingProtocol{
 }
 
 protocol ItemsPresenterProtocol{
-    func handleOutput()
+    func handleOutput(_ output: ItemsInteractorOutput)
+}
+
+enum ItemsPresenterOutput{
+    case showItems([ItemsPresentation])
 }
 
 protocol ItemsViewProtocol: NSObject{
-    func handleOutput()
+    func handleOutput(_ output: ItemsPresenterOutput)
 }
 
 struct ToDoItem{
@@ -34,7 +41,7 @@ struct ToDoItem{
 
 protocol ItemsDataStoreProtocol{
     func createItem(todo: ToDoItem)
-    func fetchItems() -> [ToDoItem]
+    func fetchItems() -> [Item]
     func deleteItem(title: String) -> Bool
     func editItem(title: String, item: ToDoItem?) -> Bool
 }

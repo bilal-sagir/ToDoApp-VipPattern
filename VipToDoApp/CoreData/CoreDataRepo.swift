@@ -22,7 +22,7 @@ struct CoreDataRepo{
     }
     
     //MARK: - Fetch All Items (Core Data)
-    func fetchItems() -> [ToDoItem]{
+    func fetchItems() -> [Item]{
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
 
         do{
@@ -38,7 +38,7 @@ struct CoreDataRepo{
                 print("--")
             }
             
-            return(res as? [ToDoItem] ?? [])
+            return(res as? [Item] ?? [])
         }
         catch{
             print(error)

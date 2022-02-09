@@ -12,13 +12,15 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
     var presenter: ItemsPresenterProtocol?
     
     func viewDidLoad() {
+        let items = fetchItems()
+        self.presenter?.handleOutput(.showItems(items))
     }
     
     func createItem(todo: ToDoItem) {
         CoreDataRepo.shared.createItem(title: todo.title, detail: todo.detail, date: todo.date)
     }
     
-    func fetchItems() -> [ToDoItem] {
+    func fetchItems() -> [Item] {
         CoreDataRepo.shared.fetchItems()
     }
     
