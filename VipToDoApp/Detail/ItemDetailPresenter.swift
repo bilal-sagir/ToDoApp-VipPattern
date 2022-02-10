@@ -14,6 +14,8 @@ class ItemDetailPresenter: ItemDetailPresenterProtocol{
         switch output {
         case .showItem(let item):
             viewController?.handleOutput(.showItem(ItemDetailPresentation(item: item)))
+        case .returnItemsScreen:
+            viewController?.handleOutput(.returnItemsScreen)
         }
     }
     

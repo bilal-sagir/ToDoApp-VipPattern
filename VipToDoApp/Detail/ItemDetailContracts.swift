@@ -10,6 +10,7 @@ import Foundation
 
 enum ItemDetailPresenterOutput{
     case showItem(ItemDetailPresentation)
+    case returnItemsScreen
 }
 
 protocol ItemDetailViewProtocol: NSObject{
@@ -18,6 +19,8 @@ protocol ItemDetailViewProtocol: NSObject{
 
 protocol ItemDetailInteractorProtocol{
     func viewDidLoad()
+    func addNewItem(title: String, detail: String, date: Date)
+    func editItem(newTitle: String, newDetail: String, newDate: Date)
 }
 
 enum ItemDetailRoute{
@@ -41,6 +44,7 @@ protocol ItemDetailRoutingProtocol{
 
 enum ItemDetailInteractorOutput{
     case showItem(Item)
+    case returnItemsScreen
 }
 
 protocol ItemDetailPresenterProtocol{

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemDetailViewController" customModule="VipToDoApp" customModuleProvider="target">
             <connections>
+                <outlet property="SaveChanges" destination="Uh9-6q-xxv" id="aMp-mM-3ww"/>
                 <outlet property="addButton" destination="3Rt-6A-1qO" id="sQw-rH-XpT"/>
                 <outlet property="dateLbl" destination="cRb-At-JXx" id="97h-B2-oL2"/>
                 <outlet property="datePicker" destination="5cn-64-Jto" id="kWn-BA-ZNo"/>
@@ -99,7 +100,16 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Edit"/>
                     <connections>
-                        <action selector="editBuıttonTapped:" destination="-1" eventType="touchUpInside" id="mVr-6r-HE4"/>
+                        <action selector="editButtonTapped:" destination="-1" eventType="touchUpInside" id="pNW-kv-clZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uh9-6q-xxv">
+                    <rect key="frame" x="138" y="791" width="116" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Save Changes"/>
+                    <connections>
+                        <action selector="saveChangesTapped:" destination="-1" eventType="touchUpInside" id="u1F-Np-86i"/>
                     </connections>
                 </button>
             </subviews>

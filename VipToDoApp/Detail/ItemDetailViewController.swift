@@ -26,14 +26,11 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
     
+    @IBOutlet weak var SaveChanges: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleTxtFld.isHidden = true
-        detailTxtFld.isHidden = true
-        datePicker.isHidden = true
-        addButton.isHidden = true
         interactor?.viewDidLoad()
     }
 
@@ -43,17 +40,39 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
             titleLbl.text = item.title
             detailLbl.text = item.detail
             dateLbl.text = Date().dateToString(date: item.date)
+            
+            titleTxtFld.isHidden = true
+            detailTxtFld.isHidden = true
+            datePicker.isHidden = true
+            addButton.isHidden = true
+            SaveChanges.isHidden = true
+        
+        case .returnItemsScreen:
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
     
     @IBAction func addButtonTapped(_ sender: Any) {
+        
+        interactor?.addNewItem(title: titleTxtFld.text!, detail: detailTxtFld.text ?? "No detail", date: datePicker.date)
+        
     }
     
     
-    @IBAction func editBuıttonTapped(_ sender: Any) {
+    @IBAction func editButtonTapped(_ sender: Any) {
+        titleTxtFld.isHidden = false
+        detailTxtFld.isHidden = false
+        datePicker.isHidden = false
+        addButton.isHidden = true
+        editButton.isHidden = true
+        SaveChanges.isHidden = false
+        
     }
     
+    @IBAction func saveChangesTapped(_ sender: Any) {
+        interactor?.editItem(newTitle: titleTxtFld.text!, newDetail: detailTxtFld.text!, newDate: datePicker.date)
+    }
 }
 
 extension Date{

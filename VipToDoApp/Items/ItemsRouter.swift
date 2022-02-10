@@ -32,6 +32,7 @@ class ItemsRouter: ItemRouterProtocol{
             destinationVC.detailLbl.isHidden = true
             destinationVC.dateLbl.isHidden = true
             destinationVC.editButton.isHidden = true
+            destinationVC.SaveChanges.isHidden = true
             
             
         }
