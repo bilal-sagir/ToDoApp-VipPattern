@@ -31,7 +31,11 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
         interactor?.viewDidLoad()
     }
     
-
+    @IBAction func reload(_ sender: UIButton) {
+        interactor?.viewDidLoad()
+        
+    }
+    
     @IBAction func addNewItem(_ sender: UIButton) {
         router?.navigate(to: .createNewItem)
     }
@@ -45,6 +49,7 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+            
             
             //MARK: - SEARCHBAR
         case .searchBar(searchActive: let searchActive, showCancelButton: let showCancelButton):
@@ -66,6 +71,9 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
             self.searchActive = searchActive
             self.filteredList = filteredList
             self.tableView.reloadData()
+        
+        case .reloadTableView:
+            interactor?.viewDidLoad()
         }
     }
 }
@@ -93,11 +101,15 @@ extension ItemsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if searchActive && searchBar.text != ""{
             router?.navigate(to: .showItemDetail(index: indexPath.row))
-            print(indexPath.row)
         }else{
             router?.navigate(to: .showItemDetail(index: indexPath.row))
-            print(indexPath.row)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        interactor?.remItem(indexPath: indexPath)
+        
     }
 }
 

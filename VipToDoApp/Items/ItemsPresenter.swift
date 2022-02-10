@@ -30,6 +30,10 @@ class ItemsPresenter: ItemsPresenterProtocol{
       
         case .textDidChange(searchActive: let searchActive, filteredList: let filteredList):
             viewController?.handleOutput(.textDidChange(searchActive: searchActive, filteredList: filteredList.map(ItemsPresentation.init)))
+        
+
+        case .reloadTableView:
+            viewController?.handleOutput(.reloadTableView)
         }
     }
 }

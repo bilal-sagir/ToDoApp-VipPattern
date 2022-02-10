@@ -19,6 +19,6 @@ struct ItemDetailPresentation{
     }
     
     init(item: Item){
-        self.init(title: item.title ?? "bb", detail: item.detail!, date: item.date!)
+        self.init(title: item.title!, detail: item.detail!, date: item.date!)
     }
 }

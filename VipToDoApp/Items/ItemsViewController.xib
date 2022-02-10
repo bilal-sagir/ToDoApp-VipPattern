@@ -46,6 +46,15 @@
                         <outlet property="delegate" destination="-1" id="CxI-eO-vxs"/>
                     </connections>
                 </searchBar>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoW-w7-wNn">
+                    <rect key="frame" x="55" y="831" width="65" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="reload"/>
+                    <connections>
+                        <action selector="reload:" destination="-1" eventType="touchUpInside" id="iPI-hw-dCL"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

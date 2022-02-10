@@ -48,6 +48,14 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
         self.presenter?.handleOutput(.cancelButton(searchActive: searchActive))
     }
     
+
+    
+    func remItem(indexPath: IndexPath) {
+        CoreDataRepo.shared.deleteItem(items[indexPath.row].title!)
+        self.presenter?.handleOutput(.reloadTableView)
+    }
+    
+    
     func textDidChange(searchText: String) {
         items = CoreDataRepo.shared.fetchItems()
         var filteredList : Array<Item>
