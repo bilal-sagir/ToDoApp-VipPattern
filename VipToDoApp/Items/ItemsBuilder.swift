@@ -19,7 +19,7 @@ class ItemsBuilder{
         interactor.presenter = presenter
         presenter.viewController = viewController
         router.viewController = viewController
-        //router.dataStore = interactor
+        router.dataStore = interactor
         
         return viewController
     }

@@ -7,6 +7,16 @@
 
 import Foundation
 
-class ItemDetailRouter: ItemDetailRouterProtocol{
+class ItemDetailRouter: NSObject, ItemDetailRouterProtocol{
     
+    weak var viewController: ItemDetailViewController?
+    var dataStore: ItemDetailDataStoreProtocol?
+    
+    func navigate(to route: ItemDetailRoute) {
+        switch route {
+        case .showItemDetail:
+            print("lol")
+            //viewController?.navigationController?.popViewController(animated: false)
+        }
+    }
 }

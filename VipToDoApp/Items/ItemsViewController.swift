@@ -18,7 +18,7 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
     }
     
     var interactor: ItemsInteractorProtocol?
-    var router: ItemsRoutingProtocol?
+    var router: ItemRouterProtocol?
     
     private var items: [ItemsPresentation] = []
     private var filteredList: [ItemsPresentation] = []
@@ -92,9 +92,11 @@ extension ItemsViewController: UITableViewDataSource {
 extension ItemsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if searchActive && searchBar.text != ""{
-            router?.navigate(to: .showItemDetail(item: filteredList[indexPath.row]))
+            router?.navigate(to: .showItemDetail(index: indexPath.row))
+            print(indexPath.row)
         }else{
-            router?.navigate(to: .showItemDetail(item: items[indexPath.row]))
+            router?.navigate(to: .showItemDetail(index: indexPath.row))
+            print(indexPath.row)
         }
     }
 }

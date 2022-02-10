@@ -7,6 +7,17 @@
 
 import Foundation
 
+enum ItemsPresenterOutput{
+    case showItems([ItemsPresentation])
+    case searchBar(searchActive: Bool, showCancelButton: Bool)
+    case endEditing(searchActive: Bool, showCancelButton: Bool, searchBarText: String?)
+    case cancelButton(searchActive: Bool)
+    case textDidChange(searchActive: Bool, filteredList: [ItemsPresentation])
+}
+
+protocol ItemsViewProtocol: NSObject{
+    func handleOutput(_ output: ItemsPresenterOutput)
+}
 
 protocol ItemsInteractorProtocol{
     func viewDidLoad()
@@ -17,11 +28,21 @@ protocol ItemsInteractorProtocol{
     func textDidChange(searchText: String)
 }
 
-protocol ItemsRouterProtocol{
-    
+enum ItemRoute{
+    case showItemDetail(index: Int)
 }
 
-protocol ItemsDataPassingProtocol{
+typealias ItemRouterProtocol = ItemsRoutingProtocol & ItemsDataPassingProtocol
+
+protocol ItemsDataStoreProtocol{
+    var items: [Item] {get set }
+}
+protocol ItemsDataPassingProtocol: AnyObject{
+    var dataStore: ItemsDataStoreProtocol? { get }
+}
+
+protocol ItemsRoutingProtocol{
+    func navigate(to route: ItemRoute)
 }
 
 enum ItemsInteractorOutput{
@@ -36,22 +57,3 @@ protocol ItemsPresenterProtocol{
     func handleOutput(_ output: ItemsInteractorOutput)
 }
 
-enum ItemsPresenterOutput{
-    case showItems([ItemsPresentation])
-    case searchBar(searchActive: Bool, showCancelButton: Bool)
-    case endEditing(searchActive: Bool, showCancelButton: Bool, searchBarText: String?)
-    case cancelButton(searchActive: Bool)
-    case textDidChange(searchActive: Bool, filteredList: [ItemsPresentation])
-}
-
-protocol ItemsViewProtocol: NSObject{
-    func handleOutput(_ output: ItemsPresenterOutput)
-}
-
-enum ItemRoute{
-    case showItemDetail(item: ItemsPresentation)
-}
-
-protocol ItemsRoutingProtocol{
-    func navigate(to route: ItemRoute)
-}

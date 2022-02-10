@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 
-class ItemsInteractor: ItemsInteractorProtocol{
+class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
+    var items: [Item] = []
+    
  
     var presenter: ItemsPresenterProtocol?
     
@@ -17,7 +19,7 @@ class ItemsInteractor: ItemsInteractorProtocol{
     var searchBarText: String?
     
     func viewDidLoad() {
-        let items = CoreDataRepo.shared.fetchItems()
+        items = CoreDataRepo.shared.fetchItems()
         self.presenter?.handleOutput(.showItems(items))
     }
     
@@ -47,7 +49,7 @@ class ItemsInteractor: ItemsInteractorProtocol{
     }
     
     func textDidChange(searchText: String) {
-        let items = CoreDataRepo.shared.fetchItems()
+        items = CoreDataRepo.shared.fetchItems()
         var filteredList : Array<Item>
         filteredList = items.filter({ item in
             let tmp: NSString = item.title! as NSString
