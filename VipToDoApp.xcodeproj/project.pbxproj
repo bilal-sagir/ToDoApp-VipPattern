@@ -75,13 +75,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9C50371127B46E3B00E7BEAF /* ItemDetail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ItemDetail;
-			sourceTree = "<group>";
-		};
 		9C50371227B4807200E7BEAF /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +111,6 @@
 			children = (
 				9C76417927B1545000C83021 /* Items */,
 				9C50371227B4807200E7BEAF /* Detail */,
-				9C50371127B46E3B00E7BEAF /* ItemDetail */,
 				9C76418627B1846000C83021 /* CoreData */,
 				9C76418727B1849300C83021 /* Resources */,
 			);

@@ -18,9 +18,22 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
     @IBOutlet weak var detailLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     
+    @IBOutlet weak var titleTxtFld: UITextField!
+    @IBOutlet weak var detailTxtFld: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleTxtFld.isHidden = true
+        detailTxtFld.isHidden = true
+        datePicker.isHidden = true
+        addButton.isHidden = true
         interactor?.viewDidLoad()
     }
 
@@ -32,6 +45,15 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
             dateLbl.text = Date().dateToString(date: item.date)
         }
     }
+    
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+    }
+    
+    
+    @IBAction func editBuıttonTapped(_ sender: Any) {
+    }
+    
 }
 
 extension Date{

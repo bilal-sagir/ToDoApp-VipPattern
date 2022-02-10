@@ -30,6 +30,7 @@ protocol ItemsInteractorProtocol{
 
 enum ItemRoute{
     case showItemDetail(index: Int)
+    case createNewItem
 }
 
 typealias ItemRouterProtocol = ItemsRoutingProtocol & ItemsDataPassingProtocol

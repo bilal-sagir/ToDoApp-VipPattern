@@ -21,9 +21,19 @@ class ItemsRouter: ItemRouterProtocol{
                 let destinationVC = ItemDetailBuilder.build()
                 var destinationDataStore = destinationVC.router?.dataStore
                 destinationDataStore?.item = item
-                viewController?.show(destinationVC, sender: nil)  
+                viewController?.present(destinationVC, animated: true, completion: nil)
             }
 
+        case .createNewItem:
+            let destinationVC = ItemDetailBuilder.build()
+            viewController?.present(destinationVC, animated: true, completion: nil)
+            
+            destinationVC.titleLbl.isHidden = true
+            destinationVC.detailLbl.isHidden = true
+            destinationVC.dateLbl.isHidden = true
+            destinationVC.editButton.isHidden = true
+            
+            
         }
     }
     

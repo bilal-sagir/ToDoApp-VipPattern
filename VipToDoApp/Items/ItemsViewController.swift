@@ -33,7 +33,7 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
     
 
     @IBAction func addNewItem(_ sender: UIButton) {
-           
+        router?.navigate(to: .createNewItem)
     }
     
     func handleOutput(_ output: ItemsPresenterOutput) {
