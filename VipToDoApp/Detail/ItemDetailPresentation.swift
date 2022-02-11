@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct ItemDetailPresentation{
+struct ItemDetailPresentation{ //No need to this class beacuse CoreData handles everything. Didn't remove it because of demonstration purposes.
     let title: String
     let detail: String
     let date: Date

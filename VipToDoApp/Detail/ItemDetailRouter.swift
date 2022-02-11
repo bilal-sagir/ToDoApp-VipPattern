@@ -14,7 +14,7 @@ class ItemDetailRouter: NSObject, ItemDetailRouterProtocol{
     func navigate(to route: ItemDetailRoute) {
         switch route {
         case .reloadTableView:
-            NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil) // PAIN no2 !!
         }
     }
 }
