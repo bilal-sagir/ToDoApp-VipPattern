@@ -27,7 +27,12 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: NSNotification.Name("reload"), object: nil)
         
+        interactor?.viewDidLoad()
+    }
+    
+    @objc func reloadTableView(){
         interactor?.viewDidLoad()
     }
     

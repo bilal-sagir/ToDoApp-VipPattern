@@ -28,6 +28,8 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
     
     @IBOutlet weak var SaveChanges: UIButton!
     
+    private var buttonIsSelected = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +59,7 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
         
         interactor?.addNewItem(title: titleTxtFld.text!, detail: detailTxtFld.text ?? "No detail", date: datePicker.date)
         
+        buttonIsSelected = true
     }
     
     
@@ -68,10 +71,25 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
         editButton.isHidden = true
         SaveChanges.isHidden = false
         
+        buttonIsSelected = true
     }
     
     @IBAction func saveChangesTapped(_ sender: Any) {
         interactor?.editItem(newTitle: titleTxtFld.text!, newDetail: detailTxtFld.text!, newDate: datePicker.date)
+    }
+    
+    //MARK: - decided reloadTableView
+    deinit{
+        if buttonIsSelected{
+            print("u need to reload table")
+    
+            self.router!.navigate(to: .reloadTableView)
+            
+            buttonIsSelected = false
+        }else{
+            print("u dont need to reload")
+        }
+        
     }
 }
 

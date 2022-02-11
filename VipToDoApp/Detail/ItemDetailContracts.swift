@@ -24,7 +24,7 @@ protocol ItemDetailInteractorProtocol{
 }
 
 enum ItemDetailRoute{
-    case showItemDetail
+    case reloadTableView
 }
 
 typealias ItemDetailRouterProtocol = ItemDetailRoutingProtocol & ItemDetailDataPassingProtocol
