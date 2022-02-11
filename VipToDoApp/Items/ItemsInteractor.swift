@@ -10,10 +10,7 @@ import UIKit
 
 class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
     var items: [Item] = []
-    
- 
     var presenter: ItemsPresenterProtocol?
-    
     var searchActive = false
     var showCancelButton = false
     var searchBarText: String?
@@ -48,13 +45,10 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
         self.presenter?.handleOutput(.cancelButton(searchActive: searchActive))
     }
     
-
-    
     func remItem(indexPath: IndexPath) {
         CoreDataRepo.shared.deleteItem(items[indexPath.row].title!)
         self.presenter?.handleOutput(.reloadTableView)
     }
-    
     
     func textDidChange(searchText: String) {
         items = CoreDataRepo.shared.fetchItems()
@@ -73,7 +67,5 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
             self.presenter?.handleOutput(.textDidChange(searchActive: searchActive,
                                                         filteredList: filteredList))
         }
-        
     }
-    
 }

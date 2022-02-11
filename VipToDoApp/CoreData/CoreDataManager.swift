@@ -4,8 +4,6 @@
 //
 //  Created by Bilal on 6.02.2022.
 //
-
-import Foundation
 import CoreData
 
 class CoreDataManager {

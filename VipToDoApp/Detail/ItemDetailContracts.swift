@@ -4,9 +4,7 @@
 //
 //  Created by Bilal on 10.02.2022.
 //
-
 import Foundation
-
 
 enum ItemDetailPresenterOutput{
     case showItem(ItemDetailPresentation)
@@ -41,7 +39,6 @@ protocol ItemDetailRoutingProtocol{
     func navigate(to route: ItemDetailRoute)
 }
 
-
 enum ItemDetailInteractorOutput{
     case showItem(Item)
     case returnItemsScreen
@@ -50,5 +47,3 @@ enum ItemDetailInteractorOutput{
 protocol ItemDetailPresenterProtocol{
     func handleOutput(_ output: ItemDetailInteractorOutput)
 }
-
-

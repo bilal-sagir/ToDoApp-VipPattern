@@ -4,7 +4,6 @@
 //
 //  Created by Bilal on 10.02.2022.
 //
-
 import Foundation
 
 struct ItemDetailPresentation{

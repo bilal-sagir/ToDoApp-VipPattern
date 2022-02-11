@@ -8,7 +8,6 @@
 import Foundation
 
 class ItemDetailRouter: NSObject, ItemDetailRouterProtocol{
-    
     weak var viewController: ItemDetailViewController?
     var dataStore: ItemDetailDataStoreProtocol?
     

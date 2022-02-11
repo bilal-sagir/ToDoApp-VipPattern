@@ -4,7 +4,6 @@
 //
 //  Created by Bilal on 7.02.2022.
 //
-
 import UIKit
 
 class ItemsViewController: UIViewController, ItemsViewProtocol {
@@ -24,7 +23,6 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
     private var filteredList: [ItemsPresentation] = []
     private var searchActive = false
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: NSNotification.Name("reload"), object: nil)
@@ -34,11 +32,6 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
     
     @objc func reloadTableView(){
         interactor?.viewDidLoad()
-    }
-    
-    @IBAction func reload(_ sender: UIButton) {
-        interactor?.viewDidLoad()
-        
     }
     
     @IBAction func addNewItem(_ sender: UIButton) {
@@ -54,7 +47,6 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            
             
             //MARK: - SEARCHBAR
         case .searchBar(searchActive: let searchActive, showCancelButton: let showCancelButton):
@@ -83,6 +75,7 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
         }
     }
 }
+
 //MARK: - TableView Data Source
 extension ItemsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -102,6 +95,7 @@ extension ItemsViewController: UITableViewDataSource {
         return items.count
     }
 }
+
 //MARK: - TableView Delegate
 extension ItemsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -114,18 +108,14 @@ extension ItemsViewController: UITableViewDelegate{
         }
     }
     
-    
     //MARK: - Swipe to delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
         interactor?.remItem(indexPath: indexPath)
-        
     }
 }
 
 // MARK: - SearchBar Config
 extension ItemsViewController: UISearchBarDelegate{
-    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         interactor?.beginEditing()
     }

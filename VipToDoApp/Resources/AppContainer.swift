@@ -10,6 +10,5 @@ import Foundation
 let appContainer = AppContainer()
 
 class AppContainer{
-    //let service: ItemsDataStoreProtocol = AppData.shared
     let router = AppRouter()
 }

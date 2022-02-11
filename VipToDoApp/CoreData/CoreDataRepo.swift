@@ -4,8 +4,6 @@
 //
 //  Created by Bilal on 6.02.2022.
 //
-
-import Foundation
 import CoreData
 
 struct CoreDataRepo{
@@ -24,16 +22,12 @@ struct CoreDataRepo{
     //MARK: - Fetch All Items (Core Data)
     func fetchItems() -> [Item]{
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
-
         do{
             let res = try context.fetch(request)
-            
-            
             return(res as? [Item] ?? [])
         }
         catch{
             print(error)
-            print("fetchItem Error")
             return []
         }
     }
@@ -59,11 +53,8 @@ struct CoreDataRepo{
     //MARK: - Delete Item (Core Data)
     func deleteItem(_ title: String){
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
-        
         let predicate = NSPredicate(format: "title == %@", title)
-        
         request.predicate = predicate
-        
         do{
             let result = try context.fetch(request)
             let resultData = result as! [Item]
@@ -80,11 +71,8 @@ struct CoreDataRepo{
     //MARK: - Edit Item (Core Data)
     func editItem(_ editItemTitle: String, newTitle: String?, newDetail: String?, newDate: Date?){
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
-        
         let predicate = NSPredicate(format: "title == %@", editItemTitle)
-        
         request.predicate = predicate
-        
         do{
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject]{

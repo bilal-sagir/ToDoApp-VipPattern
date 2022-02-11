@@ -4,12 +4,9 @@
 //
 //  Created by Bilal on 10.02.2022.
 //
-
 import UIKit
 
 class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
-
-    
 
     var interactor: ItemDetailInteractorProtocol?
     var router: ItemDetailRouterProtocol?
@@ -22,10 +19,8 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
     @IBOutlet weak var detailTxtFld: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
-    
     @IBOutlet weak var SaveChanges: UIButton!
     
     private var buttonIsSelected = false
@@ -54,11 +49,8 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
         }
     }
     
-    
     @IBAction func addButtonTapped(_ sender: Any) {
-        
         interactor?.addNewItem(title: titleTxtFld.text!, detail: detailTxtFld.text ?? "No detail", date: datePicker.date)
-        
         buttonIsSelected = true
     }
     
@@ -70,7 +62,6 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
         addButton.isHidden = true
         editButton.isHidden = true
         SaveChanges.isHidden = false
-        
         buttonIsSelected = true
     }
     
@@ -81,15 +72,9 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
     //MARK: - decided reloadTableView
     deinit{
         if buttonIsSelected{
-            print("u need to reload table")
-    
             self.router!.navigate(to: .reloadTableView)
-            
             buttonIsSelected = false
-        }else{
-            print("u dont need to reload")
         }
-        
     }
 }
 

@@ -4,7 +4,6 @@
 //
 //  Created by Bilal on 10.02.2022.
 //
-
 import Foundation
 
 class ItemDetailPresenter: ItemDetailPresenterProtocol{
@@ -18,7 +17,4 @@ class ItemDetailPresenter: ItemDetailPresenterProtocol{
             viewController?.handleOutput(.returnItemsScreen)
         }
     }
-    
-    
-    
 }

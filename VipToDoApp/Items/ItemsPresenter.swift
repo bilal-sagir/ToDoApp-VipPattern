@@ -8,7 +8,6 @@
 import Foundation
 
 class ItemsPresenter: ItemsPresenterProtocol{
-    
     weak var viewController: ItemsViewProtocol?
 
     func handleOutput(_ output: ItemsInteractorOutput) {
@@ -27,11 +26,9 @@ class ItemsPresenter: ItemsPresenterProtocol{
         case .cancelButton(searchActive: let searchActive):
             viewController?.handleOutput(.cancelButton(searchActive: searchActive))
         
-      
         case .textDidChange(searchActive: let searchActive, filteredList: let filteredList):
             viewController?.handleOutput(.textDidChange(searchActive: searchActive, filteredList: filteredList.map(ItemsPresentation.init)))
         
-
         case .reloadTableView:
             viewController?.handleOutput(.reloadTableView)
         }

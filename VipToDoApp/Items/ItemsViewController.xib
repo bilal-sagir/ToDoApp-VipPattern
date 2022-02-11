@@ -20,44 +20,44 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHT-ky-6hN">
-                    <rect key="frame" x="132" y="80" width="151" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="ADD NEW ITEM"/>
-                    <connections>
-                        <action selector="addNewItem:" destination="-1" eventType="touchUpInside" id="veX-Np-NaP"/>
-                    </connections>
-                </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="veq-Dq-RJH">
-                    <rect key="frame" x="70" y="230" width="283" height="561"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="0t1-va-XnT"/>
-                        <outlet property="delegate" destination="-1" id="gib-bX-dUr"/>
-                    </connections>
-                </tableView>
-                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hwJ-2l-8oe">
-                    <rect key="frame" x="0.0" y="158" width="414" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="CxI-eO-vxs"/>
-                    </connections>
-                </searchBar>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoW-w7-wNn">
-                    <rect key="frame" x="55" y="831" width="65" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="reload"/>
-                    <connections>
-                        <action selector="reload:" destination="-1" eventType="touchUpInside" id="iPI-hw-dCL"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="bBQ-8R-JIX">
+                    <rect key="frame" x="10" y="54" width="394" height="725"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHT-ky-6hN">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="136"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="ADD NEW ITEM"/>
+                            <connections>
+                                <action selector="addNewItem:" destination="-1" eventType="touchUpInside" id="veX-Np-NaP"/>
+                            </connections>
+                        </button>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="veq-Dq-RJH">
+                            <rect key="frame" x="0.0" y="164" width="394" height="561"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search" id="hwJ-2l-8oe">
+                                <rect key="frame" x="0.0" y="0.0" width="394" height="51"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="-1" id="CxI-eO-vxs"/>
+                                </connections>
+                            </searchBar>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="0t1-va-XnT"/>
+                                <outlet property="delegate" destination="-1" id="gib-bX-dUr"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="bBQ-8R-JIX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Eoh-gC-3xZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bBQ-8R-JIX" secondAttribute="trailing" constant="10" id="N02-mr-C9N"/>
+                <constraint firstItem="bBQ-8R-JIX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="fuX-L1-n6b"/>
+                <constraint firstAttribute="bottom" secondItem="bBQ-8R-JIX" secondAttribute="bottom" constant="117" id="nJJ-oE-P8Z"/>
+            </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="43.526785714285715"/>
         </view>
     </objects>
