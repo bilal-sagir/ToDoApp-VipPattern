@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C49EB3E27B61663003AB15F /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C49EB3D27B61663003AB15F /* LocalNotificationManager.swift */; };
 		9C50371427B4809D00E7BEAF /* ItemDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371327B4809D00E7BEAF /* ItemDetailBuilder.swift */; };
 		9C50371627B480AF00E7BEAF /* ItemDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371527B480AF00E7BEAF /* ItemDetailContracts.swift */; };
 		9C50371827B480C600E7BEAF /* ItemDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371727B480C600E7BEAF /* ItemDetailInteractor.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C49EB3D27B61663003AB15F /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		9C50371327B4809D00E7BEAF /* ItemDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailBuilder.swift; sourceTree = "<group>"; };
 		9C50371527B480AF00E7BEAF /* ItemDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailContracts.swift; sourceTree = "<group>"; };
 		9C50371727B480C600E7BEAF /* ItemDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailInteractor.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C49EB3C27B61635003AB15F /* NotificationManager */ = {
+			isa = PBXGroup;
+			children = (
+				9C49EB3D27B61663003AB15F /* LocalNotificationManager.swift */,
+			);
+			name = NotificationManager;
+			sourceTree = "<group>";
+		};
 		9C50371227B4807200E7BEAF /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +119,7 @@
 		9C76415927AFC66400C83021 /* VipToDoApp */ = {
 			isa = PBXGroup;
 			children = (
+				9C49EB3C27B61635003AB15F /* NotificationManager */,
 				9C76417927B1545000C83021 /* Items */,
 				9C50371227B4807200E7BEAF /* Detail */,
 				9C76418627B1846000C83021 /* CoreData */,
@@ -228,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C49EB3E27B61663003AB15F /* LocalNotificationManager.swift in Sources */,
 				9C50371427B4809D00E7BEAF /* ItemDetailBuilder.swift in Sources */,
 				9C76418A27B1ABF700C83021 /* AppContainer.swift in Sources */,
 				9C76417427AFCA6100C83021 /* CoreDataRepo.swift in Sources */,
