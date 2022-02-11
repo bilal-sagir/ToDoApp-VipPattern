@@ -24,4 +24,8 @@ class LocalNotificationManager{
         let req = UNNotificationRequest(identifier: identifier!, content: notiContent, trigger: dateTrigger)
         UNUserNotificationCenter.current().add(req, withCompletionHandler: nil)
     }
+    
+    class func deleteNoti(item: Item) -> Void{
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [item.title!])
+    }
 }

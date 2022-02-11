@@ -22,6 +22,7 @@ class ItemDetailInteractor: ItemDetailInteractorProtocol, ItemDetailDataStorePro
     }
 
     func editItem(newTitle: String, newDetail: String, newDate: Date) {
+        LocalNotificationManager.deleteNoti(item: item!)
         CoreDataRepo.shared.editItem((item?.title!)!, newTitle: newTitle, newDetail: newDetail, newDate: newDate)
         LocalNotificationManager.addNewNoti(item: item!)
         self.presenter?.handleOutput(.returnItemsScreen)

@@ -46,7 +46,9 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
     }
     
     func remItem(indexPath: IndexPath) {
+        LocalNotificationManager.deleteNoti(item: items[indexPath.row])
         CoreDataRepo.shared.deleteItem(items[indexPath.row].title!)
+        
         self.presenter?.handleOutput(.reloadTableView)
     }
     
