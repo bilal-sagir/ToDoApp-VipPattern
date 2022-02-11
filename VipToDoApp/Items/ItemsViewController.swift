@@ -71,7 +71,8 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
             self.searchActive = searchActive
             self.filteredList = filteredList
             self.tableView.reloadData()
-        
+ 
+            //MARK: - tableReloadData
         case .reloadTableView:
             interactor?.viewDidLoad()
         }
@@ -100,12 +101,16 @@ extension ItemsViewController: UITableViewDataSource {
 extension ItemsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if searchActive && searchBar.text != ""{
-            router?.navigate(to: .showItemDetail(index: indexPath.row))
+            let itemWithOnlyTitle = filteredList[indexPath.row].title
+            router?.navigate(to: .showItemDetail(title: itemWithOnlyTitle))
         }else{
-            router?.navigate(to: .showItemDetail(index: indexPath.row))
+            let itemWithOnlyTitle = items[indexPath.row].title
+            router?.navigate(to: .showItemDetail(title: itemWithOnlyTitle))
         }
     }
     
+    
+    //MARK: - Swipe to delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         interactor?.remItem(indexPath: indexPath)

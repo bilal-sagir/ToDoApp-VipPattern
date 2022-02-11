@@ -31,7 +31,7 @@ protocol ItemsInteractorProtocol{
 }
 
 enum ItemRoute{
-    case showItemDetail(index: Int)
+    case showItemDetail(title: String)
     case createNewItem
 }
 
@@ -40,7 +40,7 @@ typealias ItemRouterProtocol = ItemsRoutingProtocol & ItemsDataPassingProtocol
 protocol ItemsDataStoreProtocol{
     var items: [Item] {get set }
 }
-protocol ItemsDataPassingProtocol: AnyObject{
+protocol ItemsDataPassingProtocol{
     var dataStore: ItemsDataStoreProtocol? { get }
 }
 

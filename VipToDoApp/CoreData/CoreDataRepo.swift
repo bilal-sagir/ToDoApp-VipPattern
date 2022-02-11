@@ -38,6 +38,24 @@ struct CoreDataRepo{
         }
     }
     
+    func fetchItem(title: String) -> Item?{
+        var item: Item?
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        let predicate = NSPredicate(format: "title == %@", title)
+        request.predicate = predicate
+        do{
+            let res = try context.fetch(request)
+            let resData = res as! [Item]
+            for any in resData{
+                item = any
+            }
+        }catch{
+            print("fetchItem Error")
+            item = nil
+        }
+        return item
+    }
+    
     //MARK: - Delete Item (Core Data)
     func deleteItem(_ title: String){
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
