@@ -119,10 +119,10 @@
 		9C76415927AFC66400C83021 /* VipToDoApp */ = {
 			isa = PBXGroup;
 			children = (
-				9C49EB3C27B61635003AB15F /* NotificationManager */,
 				9C76417927B1545000C83021 /* Items */,
 				9C50371227B4807200E7BEAF /* Detail */,
 				9C76418627B1846000C83021 /* CoreData */,
+				9C49EB3C27B61635003AB15F /* NotificationManager */,
 				9C76418727B1849300C83021 /* Resources */,
 			);
 			path = VipToDoApp;

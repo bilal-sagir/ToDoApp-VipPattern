@@ -22,13 +22,14 @@ class ItemDetailInteractor: ItemDetailInteractorProtocol, ItemDetailDataStorePro
     
     func addNewItem(title: String, detail: String, date: Date) {
         CoreDataRepo.shared.createItem(title: title, detail: detail, date: date)
-        LocalNotificationManager.addNewNoti(item: CoreDataRepo.shared.fetchItem(title: title)!)
+        LocalNotificationManager.addNewNoti(item: item!)
         self.presenter?.handleOutput(.returnItemsScreen)
     }
     
 
     func editItem(newTitle: String, newDetail: String, newDate: Date) {
         CoreDataRepo.shared.editItem((item?.title!)!, newTitle: newTitle, newDetail: newDetail, newDate: newDate)
+        LocalNotificationManager.addNewNoti(item: item!)
         self.presenter?.handleOutput(.returnItemsScreen)
     }
     
