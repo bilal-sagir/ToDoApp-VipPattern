@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C49EB3E27B61663003AB15F /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C49EB3D27B61663003AB15F /* LocalNotificationManager.swift */; };
+		9C49EB4127B6A5AE003AB15F /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C49EB4027B6A5AE003AB15F /* DateExtension.swift */; };
 		9C50371427B4809D00E7BEAF /* ItemDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371327B4809D00E7BEAF /* ItemDetailBuilder.swift */; };
 		9C50371627B480AF00E7BEAF /* ItemDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371527B480AF00E7BEAF /* ItemDetailContracts.swift */; };
 		9C50371827B480C600E7BEAF /* ItemDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371727B480C600E7BEAF /* ItemDetailInteractor.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		9C49EB3D27B61663003AB15F /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		9C49EB4027B6A5AE003AB15F /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		9C50371327B4809D00E7BEAF /* ItemDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailBuilder.swift; sourceTree = "<group>"; };
 		9C50371527B480AF00E7BEAF /* ItemDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailContracts.swift; sourceTree = "<group>"; };
 		9C50371727B480C600E7BEAF /* ItemDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailInteractor.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 			name = NotificationManager;
 			sourceTree = "<group>";
 		};
+		9C49EB3F27B6A56D003AB15F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9C49EB4027B6A5AE003AB15F /* DateExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		9C50371227B4807200E7BEAF /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 				9C76418627B1846000C83021 /* CoreData */,
 				9C49EB3C27B61635003AB15F /* NotificationManager */,
 				9C76418727B1849300C83021 /* Resources */,
+				9C49EB3F27B6A56D003AB15F /* Extensions */,
 			);
 			path = VipToDoApp;
 			sourceTree = "<group>";
@@ -257,6 +268,7 @@
 				9C76417827B1544100C83021 /* ItemsContracts.swift in Sources */,
 				9C50371827B480C600E7BEAF /* ItemDetailInteractor.swift in Sources */,
 				9C76416527AFC66400C83021 /* VipToDoApp.xcdatamodeld in Sources */,
+				9C49EB4127B6A5AE003AB15F /* DateExtension.swift in Sources */,
 				9C76415B27AFC66400C83021 /* AppDelegate.swift in Sources */,
 				9C76415D27AFC66400C83021 /* SceneDelegate.swift in Sources */,
 				9C76417227AFC76D00C83021 /* CoreDataManager.swift in Sources */,

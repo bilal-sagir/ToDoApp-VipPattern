@@ -22,7 +22,7 @@ class ItemDetailInteractor: ItemDetailInteractorProtocol, ItemDetailDataStorePro
     
     func addNewItem(title: String, detail: String, date: Date) {
         CoreDataRepo.shared.createItem(title: title, detail: detail, date: date)
-        LocalNotificationManager.addNewNoti(item: item!)
+        LocalNotificationManager.addNewNoti(item: CoreDataRepo.shared.fetchItem(title: title)!)
         self.presenter?.handleOutput(.returnItemsScreen)
     }
     
