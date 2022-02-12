@@ -86,11 +86,11 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
     //MARK: - Sort List Items by Title
     func sortItems() {
         if sortStatus == 0{
-            items = items.sorted{ $0.title! < $1.title! }
+            items = items.sorted{ $0.title!.lowercased() < $1.title!.lowercased() }
             sortStatus = 1
             buttonStr = "SortByTitle: ⬇️"
         }else if sortStatus == 1{
-            items = items.sorted{ $0.title! > $1.title! }
+            items = items.sorted{ $0.title!.lowercased() > $1.title!.lowercased() }
             sortStatus = 2
             buttonStr = "SortByTitle: ⬆️"
         }else {
