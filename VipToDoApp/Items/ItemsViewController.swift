@@ -34,6 +34,9 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
         interactor?.viewDidLoad()
     }
     
+    @IBAction func sortItems(_ sender: Any) {
+        filterList()
+    }
     @IBAction func addNewItem(_ sender: UIButton) {
         router?.navigate(to: .createNewItem)
     }
@@ -138,5 +141,14 @@ extension ItemsViewController: UISearchBarDelegate{
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension ItemsViewController{
+    func filterList() { // should probably be called sort and not filter
+        items = items.sorted{ $0.title < $1.title } // sort the fruit by name
+        tableView.reloadData()
+        print(items)
+        // notify the table view the data has changed
     }
 }
