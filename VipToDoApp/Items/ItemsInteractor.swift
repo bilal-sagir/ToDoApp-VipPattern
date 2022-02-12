@@ -52,7 +52,7 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
     }
     
     func searchButtonClicked() {
-        searchActive = false
+        searchActive = true
         self.presenter?.handleOutput(.cancelButton(searchActive: searchActive))
     }
         
