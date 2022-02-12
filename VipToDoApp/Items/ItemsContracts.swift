@@ -14,6 +14,7 @@ enum ItemsPresenterOutput{
     case cancelButton(searchActive: Bool)
     case textDidChange(searchActive: Bool, filteredList: [ItemsPresentation])
     case reloadTableView
+    case sortItems(items: [ItemsPresentation], buttonStr: String)
 }
 
 protocol ItemsViewProtocol: NSObject{
@@ -28,6 +29,7 @@ protocol ItemsInteractorProtocol{
     func searchButtonClicked()
     func textDidChange(searchText: String)
     func remItem(indexPath: IndexPath)
+    func sortItems()
 }
 
 enum ItemRoute{
@@ -55,6 +57,7 @@ enum ItemsInteractorOutput{
     case cancelButton(searchActive: Bool)
     case textDidChange(searchActive: Bool, filteredList: [Item])
     case reloadTableView
+    case sortItems(list: [Item], buttonStr: String)
 }
 
 protocol ItemsPresenterProtocol{

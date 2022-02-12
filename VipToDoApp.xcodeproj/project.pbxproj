@@ -157,8 +157,8 @@
 		9C76418627B1846000C83021 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				9C76417127AFC76D00C83021 /* CoreDataManager.swift */,
 				9C76417327AFCA6100C83021 /* CoreDataRepo.swift */,
+				9C76417127AFC76D00C83021 /* CoreDataManager.swift */,
 				9C76416327AFC66400C83021 /* VipToDoApp.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -167,13 +167,13 @@
 		9C76418727B1849300C83021 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9C76418927B1ABF700C83021 /* AppContainer.swift */,
 				9C76415A27AFC66400C83021 /* AppDelegate.swift */,
+				9C76418B27B1AC3300C83021 /* AppRouter.swift */,
 				9C76415C27AFC66400C83021 /* SceneDelegate.swift */,
 				9C76416627AFC66500C83021 /* Assets.xcassets */,
 				9C76416827AFC66500C83021 /* LaunchScreen.storyboard */,
 				9C76416B27AFC66500C83021 /* Info.plist */,
-				9C76418927B1ABF700C83021 /* AppContainer.swift */,
-				9C76418B27B1AC3300C83021 /* AppRouter.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

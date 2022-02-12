@@ -9,6 +9,7 @@ import UIKit
 class ItemsViewController: UIViewController, ItemsViewProtocol {
     
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var sortButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView! {
         didSet{
@@ -35,7 +36,7 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
     }
     
     @IBAction func sortItems(_ sender: Any) {
-        filterList()
+        interactor?.sortItems()
     }
     @IBAction func addNewItem(_ sender: UIButton) {
         router?.navigate(to: .createNewItem)
@@ -75,6 +76,12 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
             //MARK: - tableReloadData
         case .reloadTableView:
             interactor?.viewDidLoad()
+        
+        
+        case .sortItems(items: let items, buttonStr: let buttonStr):
+            self.items = items
+            sortButton.setTitle(buttonStr, for: UIControl.State.normal)
+            self.tableView.reloadData()
         }
     }
 }
@@ -141,14 +148,5 @@ extension ItemsViewController: UISearchBarDelegate{
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-}
-
-extension ItemsViewController{
-    func filterList() { // should probably be called sort and not filter
-        items = items.sorted{ $0.title < $1.title } // sort the fruit by name
-        tableView.reloadData()
-        print(items)
-        // notify the table view the data has changed
     }
 }

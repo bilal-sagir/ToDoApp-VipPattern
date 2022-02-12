@@ -31,6 +31,9 @@ class ItemsPresenter: ItemsPresenterProtocol{
         
         case .reloadTableView:
             viewController?.handleOutput(.reloadTableView)
+        
+        case .sortItems(list: let items, buttonStr: let buttonStr):
+            viewController?.handleOutput(.sortItems(items: items.map(ItemsPresentation.init), buttonStr: buttonStr))
         }
     }
 }

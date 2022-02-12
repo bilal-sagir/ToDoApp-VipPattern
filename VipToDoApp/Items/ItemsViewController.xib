@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemsViewController" customModule="VipToDoApp" customModuleProvider="target">
             <connections>
                 <outlet property="searchBar" destination="hwJ-2l-8oe" id="eur-NA-s8T"/>
+                <outlet property="sortButton" destination="e2s-py-QpX" id="OiB-yc-LIa"/>
                 <outlet property="tableView" destination="veq-Dq-RJH" id="pbD-Et-DfE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

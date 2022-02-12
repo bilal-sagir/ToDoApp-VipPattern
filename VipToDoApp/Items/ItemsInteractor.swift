@@ -18,15 +18,19 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
     
     var items: [Item] = []
     var presenter: ItemsPresenterProtocol?
-    var searchActive = false
-    var showCancelButton = false
-    var searchBarText: String?
+    private var searchActive = false
+    private var showCancelButton = false
+    private var searchBarText: String?
+    private var sortStatus = 0
+    private var buttonStr = ""
     
+    //MARK: - viewDidLoad
     func viewDidLoad() {
         items = dataworker.fetchItems()
         self.presenter?.handleOutput(.showItems(items))
     }
     
+    //MARK: - SearchBarDelegates
     func beginEditing() {
         searchActive = true
         showCancelButton = true
@@ -51,14 +55,8 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
         searchActive = false
         self.presenter?.handleOutput(.cancelButton(searchActive: searchActive))
     }
-    
-    func remItem(indexPath: IndexPath) {
-        //LocalNotificationManager.deleteNoti(item: items[indexPath.row])
-        notificationWorker.deleteNoti(item: items[indexPath.row])
-        dataworker.deleteItem(items[indexPath.row].title!)
-        self.presenter?.handleOutput(.reloadTableView)
-    }
-    
+        
+    //MARK: - SearchBar textDidChange Logic
     func textDidChange(searchText: String) {
         items = CoreDataRepo.shared.fetchItems()
         var filteredList : Array<Item>
@@ -77,4 +75,30 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
                                                         filteredList: filteredList))
         }
     }
+    
+    //MARK: - Delete Item
+    func remItem(indexPath: IndexPath) {
+        notificationWorker.deleteNoti(item: items[indexPath.row])
+        dataworker.deleteItem(items[indexPath.row].title!)
+        self.presenter?.handleOutput(.reloadTableView)
+    }
+    
+    //MARK: - Sort List Items by Title
+    func sortItems() {
+        if sortStatus == 0{
+            items = items.sorted{ $0.title! < $1.title! }
+            sortStatus = 1
+            buttonStr = "SortByTitle: ⬇️"
+        }else if sortStatus == 1{
+            items = items.sorted{ $0.title! > $1.title! }
+            sortStatus = 2
+            buttonStr = "SortByTitle: ⬆️"
+        }else {
+            items = dataworker.fetchItems()
+            sortStatus = 0
+            buttonStr = "SortByTitle"
+        }
+        self.presenter?.handleOutput(.sortItems(list: items, buttonStr: buttonStr))
+    }
+    
 }
