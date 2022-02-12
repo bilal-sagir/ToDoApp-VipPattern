@@ -29,6 +29,7 @@ class ItemsRouter: ItemRouterProtocol{
             destinationVC.dateLbl.isHidden = true
             destinationVC.editButton.isHidden = true
             destinationVC.SaveChanges.isHidden = true
+            destinationVC.datePicker.minimumDate = Date()
         }
     }
 }

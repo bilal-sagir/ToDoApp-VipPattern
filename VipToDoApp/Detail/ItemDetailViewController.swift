@@ -73,6 +73,7 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
         editButton.isHidden = true
         SaveChanges.isHidden = false
         buttonIsSelected = true
+        datePicker.minimumDate = Date()
     }
     
     @IBAction func saveChangesTapped(_ sender: Any) {
