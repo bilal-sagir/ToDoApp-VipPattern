@@ -50,15 +50,25 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
-        interactor?.addNewItem(title: titleTxtFld.text!, detail: detailTxtFld.text ?? "No detail", date: datePicker.date)
+        interactor?.addNewItem(title: titleTxtFld.text!, detail: detailTxtFld.text!, date: datePicker.date)
         buttonIsSelected = true
     }
     
-    
     @IBAction func editButtonTapped(_ sender: Any) {
         titleTxtFld.isHidden = false
+        titleTxtFld.text = titleLbl.text
         detailTxtFld.isHidden = false
+        detailTxtFld.text = detailLbl.text
         datePicker.isHidden = false
+
+        let dateF = DateFormatter()
+        dateF.dateFormat = "dd-MM-yyyy HH:mm"
+        datePicker.date = dateF.date(from: dateLbl.text!)!
+        
+        titleLbl.isHidden = true
+        detailLbl.isHidden = true
+        dateLbl.isHidden = true
+        
         addButton.isHidden = true
         editButton.isHidden = true
         SaveChanges.isHidden = false
