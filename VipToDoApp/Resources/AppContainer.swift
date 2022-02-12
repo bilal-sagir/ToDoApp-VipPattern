@@ -10,6 +10,7 @@ import Foundation
 let appContainer = AppContainer()
 
 class AppContainer{
-    let service:CoreDataServiceProtocol = CoreDataRepo()
+    let service: CoreDataServiceProtocol = CoreDataRepo()
+    let service2: LocalNotificationServiceProtocol = LocalNotificationManager()
     let router = AppRouter()
 }

@@ -8,10 +8,11 @@ import Foundation
 
 class ItemDetailInteractor: ItemDetailInteractorProtocol, ItemDetailDataStoreProtocol{
     let dataworker: CoreDataServiceProtocol
-    init(dataworker: CoreDataServiceProtocol){
+    let notificationWorker: LocalNotificationServiceProtocol
+    init(dataworker: CoreDataServiceProtocol, notificationWorker: LocalNotificationServiceProtocol){
         self.dataworker = dataworker
+        self.notificationWorker = notificationWorker
     }
-    
     
     var item: Item?
     var presenter: ItemDetailPresenterProtocol?
@@ -23,15 +24,15 @@ class ItemDetailInteractor: ItemDetailInteractorProtocol, ItemDetailDataStorePro
     
     func addNewItem(title: String, detail: String, date: Date) {
         dataworker.createItem(title: title, detail: detail, date: date)
-        LocalNotificationManager.addNewNoti(item: CoreDataRepo.shared.fetchItem(title: title)!)
+        notificationWorker.addNewNoti(item: dataworker.fetchItem(title: title)!)
         self.presenter?.handleOutput(.returnItemsScreen)
     }
 
     func editItem(newTitle: String, newDetail: String, newDate: Date) {
-        LocalNotificationManager.deleteNoti(item: item!)
-        guard let item = item else {return}
+        guard let item = item else { return }
+        notificationWorker.deleteNoti(item: item)
         dataworker.editItem(item.title!, newTitle: newTitle, newDetail: newDetail, newDate: newDate)
-        LocalNotificationManager.addNewNoti(item: item)
+        notificationWorker.addNewNoti(item: item)
         self.presenter?.handleOutput(.returnItemsScreen)
     }
 }

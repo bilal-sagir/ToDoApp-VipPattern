@@ -7,8 +7,13 @@
 
 import UserNotifications
 
-class LocalNotificationManager{
-    class func addNewNoti(item: Item) -> Void {
+protocol LocalNotificationServiceProtocol{
+    func addNewNoti(item: Item) -> Void
+    func deleteNoti(item: Item) -> Void
+}
+
+class LocalNotificationManager: LocalNotificationServiceProtocol{
+    func addNewNoti(item: Item) -> Void {
         let notiContent = UNMutableNotificationContent()
         
         notiContent.title = "‼️Time is Up‼️"
@@ -25,7 +30,7 @@ class LocalNotificationManager{
         UNUserNotificationCenter.current().add(req, withCompletionHandler: nil)
     }
     
-    class func deleteNoti(item: Item) -> Void{
+    func deleteNoti(item: Item) -> Void{
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [item.title!])
     }
 }

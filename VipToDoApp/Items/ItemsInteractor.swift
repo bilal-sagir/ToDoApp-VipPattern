@@ -10,8 +10,10 @@ import UIKit
 
 class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
     let dataworker: CoreDataServiceProtocol
-    init(dataworker: CoreDataServiceProtocol){
+    let notificationWorker: LocalNotificationServiceProtocol
+    init(dataworker: CoreDataServiceProtocol, notificationWorker: LocalNotificationServiceProtocol){
         self.dataworker = dataworker
+        self.notificationWorker = notificationWorker
     }
     
     var items: [Item] = []
@@ -51,7 +53,8 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
     }
     
     func remItem(indexPath: IndexPath) {
-        LocalNotificationManager.deleteNoti(item: items[indexPath.row])
+        //LocalNotificationManager.deleteNoti(item: items[indexPath.row])
+        notificationWorker.deleteNoti(item: items[indexPath.row])
         dataworker.deleteItem(items[indexPath.row].title!)
         self.presenter?.handleOutput(.reloadTableView)
     }
