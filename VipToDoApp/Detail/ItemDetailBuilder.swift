@@ -10,7 +10,7 @@ import Foundation
 class ItemDetailBuilder{
     static func build() -> ItemDetailViewController{
         let viewController = ItemDetailViewController(nibName: "ItemDetailViewController", bundle: nil)
-        let interactor = ItemDetailInteractor()
+        let interactor = ItemDetailInteractor(dataworker: appContainer.service)
         let presenter = ItemDetailPresenter()
         let router = ItemDetailRouter()
         

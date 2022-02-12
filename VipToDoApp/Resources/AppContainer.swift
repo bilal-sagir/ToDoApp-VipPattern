@@ -10,5 +10,6 @@ import Foundation
 let appContainer = AppContainer()
 
 class AppContainer{
+    let service:CoreDataServiceProtocol = CoreDataRepo()
     let router = AppRouter()
 }

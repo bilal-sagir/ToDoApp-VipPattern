@@ -6,7 +6,15 @@
 //
 import CoreData
 
-struct CoreDataRepo{
+protocol CoreDataServiceProtocol{
+    func createItem(title: String, detail: String, date: Date)
+    func fetchItems() -> [Item]
+    func fetchItem(title: String) -> Item?
+    func deleteItem(_ title: String)
+    func editItem(_ editItemTitle: String, newTitle: String?, newDetail: String?, newDate: Date?)
+}
+
+class CoreDataRepo: CoreDataServiceProtocol{
     var context: NSManagedObjectContext = CoreDataManager.shared.container.viewContext
     static let shared = CoreDataRepo()
     

@@ -9,6 +9,11 @@ import Foundation
 import UIKit
 
 class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
+    let dataworker: CoreDataServiceProtocol
+    init(dataworker: CoreDataServiceProtocol){
+        self.dataworker = dataworker
+    }
+    
     var items: [Item] = []
     var presenter: ItemsPresenterProtocol?
     var searchActive = false
@@ -16,7 +21,7 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
     var searchBarText: String?
     
     func viewDidLoad() {
-        items = CoreDataRepo.shared.fetchItems()
+        items = dataworker.fetchItems()
         self.presenter?.handleOutput(.showItems(items))
     }
     
@@ -47,8 +52,7 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
     
     func remItem(indexPath: IndexPath) {
         LocalNotificationManager.deleteNoti(item: items[indexPath.row])
-        CoreDataRepo.shared.deleteItem(items[indexPath.row].title!)
-        
+        dataworker.deleteItem(items[indexPath.row].title!)
         self.presenter?.handleOutput(.reloadTableView)
     }
     
