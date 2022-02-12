@@ -23,15 +23,15 @@ class ItemDetailInteractor: ItemDetailInteractorProtocol, ItemDetailDataStorePro
     }
     
     func addNewItem(title: String, detail: String, date: Date) {
-        dataworker.createItem(title: title, detail: detail, date: date)
-        notificationWorker.addNewNoti(item: dataworker.fetchItem(title: title)!)
+        let createdItem = dataworker.createItem(title: title, detail: detail, date: date)
+        notificationWorker.addNewNoti(item: dataworker.fetchItem(id: createdItem.id!)!)
         self.presenter?.handleOutput(.returnItemsScreen)
     }
 
     func editItem(newTitle: String, newDetail: String, newDate: Date) {
         guard let item = item else { return }
-        notificationWorker.deleteNoti(item: item)
-        dataworker.editItem(item.title!, newTitle: newTitle, newDetail: newDetail, newDate: newDate)
+        notificationWorker.deleteNoti(id: item.id!)
+        dataworker.editItem(item.id!, newTitle: newTitle, newDetail: newDetail, newDate: newDate)
         notificationWorker.addNewNoti(item: item)
         self.presenter?.handleOutput(.returnItemsScreen)
     }

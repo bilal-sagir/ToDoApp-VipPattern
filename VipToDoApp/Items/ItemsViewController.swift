@@ -110,11 +110,11 @@ extension ItemsViewController: UITableViewDataSource {
 extension ItemsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if searchActive && searchBar.text != ""{
-            let itemWithOnlyTitle = filteredList[indexPath.row].title
-            router?.navigate(to: .showItemDetail(title: itemWithOnlyTitle))
+            let id = filteredList[indexPath.row].id
+            router?.navigate(to: .showItemDetail(id: id))
         }else{
-            let itemWithOnlyTitle = items[indexPath.row].title
-            router?.navigate(to: .showItemDetail(title: itemWithOnlyTitle))
+            let id = items[indexPath.row].id
+            router?.navigate(to: .showItemDetail(id: id))
         }
     }
     

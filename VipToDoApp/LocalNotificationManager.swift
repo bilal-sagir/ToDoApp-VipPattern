@@ -9,7 +9,7 @@ import UserNotifications
 
 protocol LocalNotificationServiceProtocol{
     func addNewNoti(item: Item) -> Void
-    func deleteNoti(item: Item) -> Void
+    func deleteNoti(id: String) -> Void
 }
 
 class LocalNotificationManager: LocalNotificationServiceProtocol{
@@ -25,12 +25,12 @@ class LocalNotificationManager: LocalNotificationServiceProtocol{
         let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: item.date!)
         let dateTrigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
         
-        let identifier = item.title
+        let identifier = item.id
         let req = UNNotificationRequest(identifier: identifier!, content: notiContent, trigger: dateTrigger)
         UNUserNotificationCenter.current().add(req, withCompletionHandler: nil)
     }
     
-    func deleteNoti(item: Item) -> Void{
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [item.title!])
+    func deleteNoti(id: String) -> Void{
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
     }
 }

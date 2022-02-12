@@ -78,8 +78,8 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
     
     //MARK: - Delete Item
     func remItem(indexPath: IndexPath) {
-        notificationWorker.deleteNoti(item: items[indexPath.row])
-        dataworker.deleteItem(items[indexPath.row].title!)
+        notificationWorker.deleteNoti(id: items[indexPath.row].id!)
+        dataworker.deleteItem(items[indexPath.row].id!)
         self.presenter?.handleOutput(.reloadTableView)
     }
     

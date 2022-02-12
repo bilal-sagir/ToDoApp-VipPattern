@@ -33,7 +33,7 @@ protocol ItemsInteractorProtocol{
 }
 
 enum ItemRoute{
-    case showItemDetail(title: String)
+    case showItemDetail(id: String)
     case createNewItem
 }
 

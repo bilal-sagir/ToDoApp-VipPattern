@@ -13,8 +13,8 @@ class ItemsRouter: ItemRouterProtocol{
     
     func navigate(to route: ItemRoute) {
         switch route {
-        case .showItemDetail(title: let titleString):
-            let itemToGo = CoreDataRepo.shared.fetchItem(title: titleString) // PAIN !!
+        case .showItemDetail(id: let itemId):
+            let itemToGo = CoreDataRepo.shared.fetchItem(id: itemId) // PAIN !!
             let destinationVC = ItemDetailBuilder.build()
             var destinationDataStore = destinationVC.router?.dataStore
             destinationDataStore?.item = itemToGo
