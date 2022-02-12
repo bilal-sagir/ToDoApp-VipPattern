@@ -7,24 +7,28 @@
 import CoreData
 
 protocol CoreDataServiceProtocol{
-    func createItem(title: String, detail: String, date: Date)
+    func createItem(title: String, detail: String, date: Date) -> Item
     func fetchItems() -> [Item]
-    func fetchItem(title: String) -> Item?
-    func deleteItem(_ title: String)
-    func editItem(_ editItemTitle: String, newTitle: String?, newDetail: String?, newDate: Date?)
+    func fetchItem(id: String) -> Item?
+    func deleteItem(_ id: String)
+    func editItem(_ id: String, newTitle: String?, newDetail: String?, newDate: Date?)
 }
 
 class CoreDataRepo: CoreDataServiceProtocol{
+    
     var context: NSManagedObjectContext = CoreDataManager.shared.container.viewContext
     static let shared = CoreDataRepo()
     
     //MARK: - Create Item (Core Data)
-    func createItem(title: String, detail: String, date: Date){
+    func createItem(title: String, detail: String, date: Date) -> Item {
         let item = Item(context: context)
+        item.id = UUID().uuidString
         item.title = title
         item.detail = detail
         item.date = date
         CoreDataManager.shared.saveContext()
+        
+        return item
     }
     
     //MARK: - Fetch All Items (Core Data)
@@ -40,10 +44,10 @@ class CoreDataRepo: CoreDataServiceProtocol{
         }
     }
     
-    func fetchItem(title: String) -> Item?{
+    func fetchItem(id: String) -> Item?{
         var item: Item?
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
-        let predicate = NSPredicate(format: "title == %@", title)
+        let predicate = NSPredicate(format: "id == %@", id)
         request.predicate = predicate
         do{
             let res = try context.fetch(request)
@@ -59,9 +63,9 @@ class CoreDataRepo: CoreDataServiceProtocol{
     }
     
     //MARK: - Delete Item (Core Data)
-    func deleteItem(_ title: String){
+    func deleteItem(_ id: String){
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
-        let predicate = NSPredicate(format: "title == %@", title)
+        let predicate = NSPredicate(format: "id == %@", id)
         request.predicate = predicate
         do{
             let result = try context.fetch(request)
@@ -77,9 +81,9 @@ class CoreDataRepo: CoreDataServiceProtocol{
     }
     
     //MARK: - Edit Item (Core Data)
-    func editItem(_ editItemTitle: String, newTitle: String?, newDetail: String?, newDate: Date?){
+    func editItem(_ id: String, newTitle: String?, newDetail: String?, newDate: Date?){
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
-        let predicate = NSPredicate(format: "title == %@", editItemTitle)
+        let predicate = NSPredicate(format: "id == %@", id)
         request.predicate = predicate
         do{
             let result = try context.fetch(request)
