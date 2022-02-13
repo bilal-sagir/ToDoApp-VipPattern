@@ -36,3 +36,9 @@ Here's the todo schema:
   
   If there is a match, then the app shows only the matches, and else, i.e., if there is no item matching your search, then all of the items are shown.
 - Remove the task by swiping left.
+
+# Screenshots
+<p align="center">
+<img width="30%" alt="Demo" src="https://user-images.githubusercontent.com/93740120/153737983-1fbdf3aa-bd43-41dd-bbbf-b19039465d78.gif"> 
+<img width="30%" alt="NotificationDemo" src="https://user-images.githubusercontent.com/93740120/153738057-050b8d2b-0cd9-4aa5-aa2d-cc0b9e2d487e.gif">
+</p>
