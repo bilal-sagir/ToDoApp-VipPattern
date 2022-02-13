@@ -77,7 +77,7 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
         case .reloadTableView:
             interactor?.viewDidLoad()
         
-        
+            //MARK: - sortItems
         case .sortItems(items: let items, buttonStr: let buttonStr):
             self.items = items
             sortButton.setTitle(buttonStr, for: UIControl.State.normal)
@@ -96,6 +96,7 @@ extension ItemsViewController: UITableViewDataSource {
         let bgView = UIView()
         bgView.backgroundColor = UIColor(red: 0.914, green: 0.769, blue: 0.416, alpha: 0.20)
         cell.selectedBackgroundView = bgView
+        
         if searchActive && self.searchBar.text != ""{
             cell.textLabel?.text = self.filteredList[indexPath.row].title
         }else{

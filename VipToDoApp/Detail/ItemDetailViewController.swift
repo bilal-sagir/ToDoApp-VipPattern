@@ -35,11 +35,11 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol{
             addButton.isEnabled = false
         }
     }
-
-
     
     func handleOutput(_ output: ItemDetailPresenterOutput) {
         switch output {
+            
+            //MARK: - showItem
         case .showItem(let item):
             titleLbl.text = item.title
             detailLbl.text = item.detail
@@ -51,14 +51,17 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol{
             addButton.isHidden = true
             SaveChanges.isHidden = true
         
+            //MARK: - returnToMainVC
         case .returnItemsScreen:
             self.dismiss(animated: true, completion: nil)
     
+            //MARK: -emptyTitleDetection
         case .checkEmptyTitleTxtFld(isEmptyValue: let empty):
             addButton.isEnabled = empty
         }
     }
     
+    //MARK: - Buttons
     @IBAction func addButtonTapped(_ sender: Any) {
         interactor?.addNewItem(
             title: titleTxtFld.text!,
@@ -75,9 +78,7 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol{
         detailTxtFld.text = detailLbl.text
         datePicker.isHidden = false
 
-        let dateF = DateFormatter()
-        dateF.dateFormat = "dd-MM-yyyy HH:mm"
-        datePicker.date = dateF.date(from: dateLbl.text!)!
+        datePicker.date = String().stringToDate(strDate: dateLbl.text!)
         
         titleLbl.isHidden = true
         detailLbl.isHidden = true

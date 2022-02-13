@@ -14,3 +14,12 @@ extension Date{
         return date
     }
 }
+
+extension String{
+    func stringToDate(strDate: String) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        guard let date = dateFormatter.date(from: strDate) else {return Date()}
+        return date
+    }
+}
