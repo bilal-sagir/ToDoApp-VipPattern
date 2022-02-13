@@ -7,25 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C49EB3E27B61663003AB15F /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C49EB3D27B61663003AB15F /* LocalNotificationManager.swift */; };
+		9C49EB4127B6A5AE003AB15F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C49EB4027B6A5AE003AB15F /* Extension.swift */; };
+		9C50371427B4809D00E7BEAF /* ItemDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371327B4809D00E7BEAF /* ItemDetailBuilder.swift */; };
+		9C50371627B480AF00E7BEAF /* ItemDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371527B480AF00E7BEAF /* ItemDetailContracts.swift */; };
+		9C50371827B480C600E7BEAF /* ItemDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371727B480C600E7BEAF /* ItemDetailInteractor.swift */; };
+		9C50371A27B480D400E7BEAF /* ItemDetailPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371927B480D400E7BEAF /* ItemDetailPresentation.swift */; };
+		9C50371C27B480DD00E7BEAF /* ItemDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371B27B480DD00E7BEAF /* ItemDetailPresenter.swift */; };
+		9C50371E27B480E700E7BEAF /* ItemDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371D27B480E700E7BEAF /* ItemDetailRouter.swift */; };
+		9C50372127B480FD00E7BEAF /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50371F27B480FD00E7BEAF /* ItemDetailViewController.swift */; };
+		9C50372227B480FD00E7BEAF /* ItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C50372027B480FD00E7BEAF /* ItemDetailViewController.xib */; };
 		9C76415B27AFC66400C83021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76415A27AFC66400C83021 /* AppDelegate.swift */; };
 		9C76415D27AFC66400C83021 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76415C27AFC66400C83021 /* SceneDelegate.swift */; };
-		9C76415F27AFC66400C83021 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76415E27AFC66400C83021 /* ViewController.swift */; };
-		9C76416227AFC66400C83021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C76416027AFC66400C83021 /* Main.storyboard */; };
 		9C76416527AFC66400C83021 /* VipToDoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C76416327AFC66400C83021 /* VipToDoApp.xcdatamodeld */; };
 		9C76416727AFC66500C83021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C76416627AFC66500C83021 /* Assets.xcassets */; };
 		9C76416A27AFC66500C83021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C76416827AFC66500C83021 /* LaunchScreen.storyboard */; };
+		9C76417227AFC76D00C83021 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417127AFC76D00C83021 /* CoreDataManager.swift */; };
+		9C76417427AFCA6100C83021 /* CoreDataRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417327AFCA6100C83021 /* CoreDataRepo.swift */; };
+		9C76417627B1542E00C83021 /* ItemsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417527B1542E00C83021 /* ItemsBuilder.swift */; };
+		9C76417827B1544100C83021 /* ItemsContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417727B1544100C83021 /* ItemsContracts.swift */; };
+		9C76417C27B1549300C83021 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417A27B1549300C83021 /* ItemsViewController.swift */; };
+		9C76417D27B1549300C83021 /* ItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C76417B27B1549300C83021 /* ItemsViewController.xib */; };
+		9C76417F27B154CB00C83021 /* ItemsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76417E27B154CB00C83021 /* ItemsInteractor.swift */; };
+		9C76418127B154E600C83021 /* ItemsPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76418027B154E600C83021 /* ItemsPresentation.swift */; };
+		9C76418327B154EF00C83021 /* ItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76418227B154EF00C83021 /* ItemsPresenter.swift */; };
+		9C76418527B154F500C83021 /* ItemsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76418427B154F500C83021 /* ItemsRouter.swift */; };
+		9C76418A27B1ABF700C83021 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76418927B1ABF700C83021 /* AppContainer.swift */; };
+		9C76418C27B1AC3300C83021 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C76418B27B1AC3300C83021 /* AppRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C49EB3D27B61663003AB15F /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		9C49EB4027B6A5AE003AB15F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		9C50371327B4809D00E7BEAF /* ItemDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailBuilder.swift; sourceTree = "<group>"; };
+		9C50371527B480AF00E7BEAF /* ItemDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailContracts.swift; sourceTree = "<group>"; };
+		9C50371727B480C600E7BEAF /* ItemDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailInteractor.swift; sourceTree = "<group>"; };
+		9C50371927B480D400E7BEAF /* ItemDetailPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailPresentation.swift; sourceTree = "<group>"; };
+		9C50371B27B480DD00E7BEAF /* ItemDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailPresenter.swift; sourceTree = "<group>"; };
+		9C50371D27B480E700E7BEAF /* ItemDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailRouter.swift; sourceTree = "<group>"; };
+		9C50371F27B480FD00E7BEAF /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		9C50372027B480FD00E7BEAF /* ItemDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailViewController.xib; sourceTree = "<group>"; };
 		9C76415727AFC66400C83021 /* VipToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VipToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C76415A27AFC66400C83021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C76415C27AFC66400C83021 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9C76415E27AFC66400C83021 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9C76416127AFC66400C83021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C76416427AFC66400C83021 /* VipToDoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VipToDoApp.xcdatamodel; sourceTree = "<group>"; };
 		9C76416627AFC66500C83021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C76416927AFC66500C83021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C76416B27AFC66500C83021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C76417127AFC76D00C83021 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		9C76417327AFCA6100C83021 /* CoreDataRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepo.swift; sourceTree = "<group>"; };
+		9C76417527B1542E00C83021 /* ItemsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsBuilder.swift; sourceTree = "<group>"; };
+		9C76417727B1544100C83021 /* ItemsContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsContracts.swift; sourceTree = "<group>"; };
+		9C76417A27B1549300C83021 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		9C76417B27B1549300C83021 /* ItemsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsViewController.xib; sourceTree = "<group>"; };
+		9C76417E27B154CB00C83021 /* ItemsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsInteractor.swift; sourceTree = "<group>"; };
+		9C76418027B154E600C83021 /* ItemsPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPresentation.swift; sourceTree = "<group>"; };
+		9C76418227B154EF00C83021 /* ItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPresenter.swift; sourceTree = "<group>"; };
+		9C76418427B154F500C83021 /* ItemsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRouter.swift; sourceTree = "<group>"; };
+		9C76418927B1ABF700C83021 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		9C76418B27B1AC3300C83021 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +79,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C49EB3C27B61635003AB15F /* NotificationManager */ = {
+			isa = PBXGroup;
+			children = (
+				9C49EB3D27B61663003AB15F /* LocalNotificationManager.swift */,
+			);
+			name = NotificationManager;
+			sourceTree = "<group>";
+		};
+		9C49EB3F27B6A56D003AB15F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9C49EB4027B6A5AE003AB15F /* Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		9C50371227B4807200E7BEAF /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				9C50371327B4809D00E7BEAF /* ItemDetailBuilder.swift */,
+				9C50371527B480AF00E7BEAF /* ItemDetailContracts.swift */,
+				9C50371F27B480FD00E7BEAF /* ItemDetailViewController.swift */,
+				9C50372027B480FD00E7BEAF /* ItemDetailViewController.xib */,
+				9C50371727B480C600E7BEAF /* ItemDetailInteractor.swift */,
+				9C50371927B480D400E7BEAF /* ItemDetailPresentation.swift */,
+				9C50371B27B480DD00E7BEAF /* ItemDetailPresenter.swift */,
+				9C50371D27B480E700E7BEAF /* ItemDetailRouter.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		9C76414E27AFC66400C83021 = {
 			isa = PBXGroup;
 			children = (
@@ -58,16 +129,53 @@
 		9C76415927AFC66400C83021 /* VipToDoApp */ = {
 			isa = PBXGroup;
 			children = (
+				9C76417927B1545000C83021 /* Items */,
+				9C50371227B4807200E7BEAF /* Detail */,
+				9C76418627B1846000C83021 /* CoreData */,
+				9C49EB3C27B61635003AB15F /* NotificationManager */,
+				9C76418727B1849300C83021 /* Resources */,
+				9C49EB3F27B6A56D003AB15F /* Extensions */,
+			);
+			path = VipToDoApp;
+			sourceTree = "<group>";
+		};
+		9C76417927B1545000C83021 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				9C76417527B1542E00C83021 /* ItemsBuilder.swift */,
+				9C76417727B1544100C83021 /* ItemsContracts.swift */,
+				9C76417A27B1549300C83021 /* ItemsViewController.swift */,
+				9C76417B27B1549300C83021 /* ItemsViewController.xib */,
+				9C76417E27B154CB00C83021 /* ItemsInteractor.swift */,
+				9C76418027B154E600C83021 /* ItemsPresentation.swift */,
+				9C76418227B154EF00C83021 /* ItemsPresenter.swift */,
+				9C76418427B154F500C83021 /* ItemsRouter.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		9C76418627B1846000C83021 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9C76417327AFCA6100C83021 /* CoreDataRepo.swift */,
+				9C76417127AFC76D00C83021 /* CoreDataManager.swift */,
+				9C76416327AFC66400C83021 /* VipToDoApp.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		9C76418727B1849300C83021 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C76418927B1ABF700C83021 /* AppContainer.swift */,
 				9C76415A27AFC66400C83021 /* AppDelegate.swift */,
+				9C76418B27B1AC3300C83021 /* AppRouter.swift */,
 				9C76415C27AFC66400C83021 /* SceneDelegate.swift */,
-				9C76415E27AFC66400C83021 /* ViewController.swift */,
-				9C76416027AFC66400C83021 /* Main.storyboard */,
 				9C76416627AFC66500C83021 /* Assets.xcassets */,
 				9C76416827AFC66500C83021 /* LaunchScreen.storyboard */,
 				9C76416B27AFC66500C83021 /* Info.plist */,
-				9C76416327AFC66400C83021 /* VipToDoApp.xcdatamodeld */,
 			);
-			path = VipToDoApp;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +238,8 @@
 			files = (
 				9C76416A27AFC66500C83021 /* LaunchScreen.storyboard in Resources */,
 				9C76416727AFC66500C83021 /* Assets.xcassets in Resources */,
-				9C76416227AFC66400C83021 /* Main.storyboard in Resources */,
+				9C50372227B480FD00E7BEAF /* ItemDetailViewController.xib in Resources */,
+				9C76417D27B1549300C83021 /* ItemsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,24 +250,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C76415F27AFC66400C83021 /* ViewController.swift in Sources */,
+				9C49EB3E27B61663003AB15F /* LocalNotificationManager.swift in Sources */,
+				9C50371427B4809D00E7BEAF /* ItemDetailBuilder.swift in Sources */,
+				9C76418A27B1ABF700C83021 /* AppContainer.swift in Sources */,
+				9C76417427AFCA6100C83021 /* CoreDataRepo.swift in Sources */,
+				9C50371A27B480D400E7BEAF /* ItemDetailPresentation.swift in Sources */,
+				9C50371E27B480E700E7BEAF /* ItemDetailRouter.swift in Sources */,
+				9C76417F27B154CB00C83021 /* ItemsInteractor.swift in Sources */,
+				9C76418127B154E600C83021 /* ItemsPresentation.swift in Sources */,
+				9C76418C27B1AC3300C83021 /* AppRouter.swift in Sources */,
+				9C50372127B480FD00E7BEAF /* ItemDetailViewController.swift in Sources */,
+				9C76417627B1542E00C83021 /* ItemsBuilder.swift in Sources */,
+				9C50371627B480AF00E7BEAF /* ItemDetailContracts.swift in Sources */,
+				9C76417C27B1549300C83021 /* ItemsViewController.swift in Sources */,
+				9C50371C27B480DD00E7BEAF /* ItemDetailPresenter.swift in Sources */,
+				9C76418327B154EF00C83021 /* ItemsPresenter.swift in Sources */,
+				9C76417827B1544100C83021 /* ItemsContracts.swift in Sources */,
+				9C50371827B480C600E7BEAF /* ItemDetailInteractor.swift in Sources */,
 				9C76416527AFC66400C83021 /* VipToDoApp.xcdatamodeld in Sources */,
+				9C49EB4127B6A5AE003AB15F /* Extension.swift in Sources */,
 				9C76415B27AFC66400C83021 /* AppDelegate.swift in Sources */,
 				9C76415D27AFC66400C83021 /* SceneDelegate.swift in Sources */,
+				9C76417227AFC76D00C83021 /* CoreDataManager.swift in Sources */,
+				9C76418527B154F500C83021 /* ItemsRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9C76416027AFC66400C83021 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9C76416127AFC66400C83021 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9C76416827AFC66500C83021 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -295,12 +415,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5L637C2H24;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VipToDoApp/Info.plist;
+				INFOPLIST_FILE = VipToDoApp/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,12 +445,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5L637C2H24;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VipToDoApp/Info.plist;
+				INFOPLIST_FILE = VipToDoApp/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
