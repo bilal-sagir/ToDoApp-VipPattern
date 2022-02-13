@@ -27,7 +27,7 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: NSNotification.Name("reload"), object: nil)
-        
+        searchBar.backgroundImage = UIImage()
         interactor?.viewDidLoad()
     }
     
@@ -90,6 +90,12 @@ class ItemsViewController: UIViewController, ItemsViewProtocol {
 extension ItemsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath)
+        
+        cell.backgroundColor = UIColor(red: 0.149, green: 0.275, blue: 0.325, alpha: 1.0)
+        cell.textLabel?.textColor = UIColor(red: 0.914, green: 0.769, blue: 0.416, alpha: 1.0)
+        let bgView = UIView()
+        bgView.backgroundColor = UIColor(red: 0.914, green: 0.769, blue: 0.416, alpha: 0.20)
+        cell.selectedBackgroundView = bgView
         if searchActive && self.searchBar.text != ""{
             cell.textLabel?.text = self.filteredList[indexPath.row].title
         }else{
@@ -109,6 +115,7 @@ extension ItemsViewController: UITableViewDataSource {
 //MARK: - TableView Delegate
 extension ItemsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if searchActive && searchBar.text != ""{
             let id = filteredList[indexPath.row].id
             router?.navigate(to: .showItemDetail(id: id))

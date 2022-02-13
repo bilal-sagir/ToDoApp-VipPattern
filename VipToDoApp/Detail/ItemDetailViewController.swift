@@ -28,6 +28,7 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol{
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        datePicker.contentHorizontalAlignment = .leading
         interactor?.viewDidLoad()
 
         if titleTxtFld.text!.isEmpty {

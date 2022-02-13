@@ -88,15 +88,15 @@ class ItemsInteractor: ItemsInteractorProtocol, ItemsDataStoreProtocol{
         if sortStatus == 0{
             items = items.sorted{ $0.title!.lowercased() < $1.title!.lowercased() }
             sortStatus = 1
-            buttonStr = "SortByTitle: ⬇️"
+            buttonStr = "Sorted By Title: ⬇️"
         }else if sortStatus == 1{
             items = items.sorted{ $0.title!.lowercased() > $1.title!.lowercased() }
             sortStatus = 2
-            buttonStr = "SortByTitle: ⬆️"
+            buttonStr = "Sorted By Title: ⬆️"
         }else {
             items = dataworker.fetchItems()
             sortStatus = 0
-            buttonStr = "SortByTitle"
+            buttonStr = "Sorted By Create Date"
         }
         self.presenter?.handleOutput(.sortItems(list: items, buttonStr: buttonStr))
     }
