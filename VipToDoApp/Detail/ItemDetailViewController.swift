@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
+class ItemDetailViewController: UIViewController, ItemDetailViewProtocol{
 
     var interactor: ItemDetailInteractorProtocol?
     var router: ItemDetailRouterProtocol?
@@ -27,10 +27,16 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         interactor?.viewDidLoad()
+
+        if titleTxtFld.text!.isEmpty {
+            addButton.isEnabled = false
+        }
     }
 
+
+    
     func handleOutput(_ output: ItemDetailPresenterOutput) {
         switch output {
         case .showItem(let item):
@@ -46,11 +52,18 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
         
         case .returnItemsScreen:
             self.dismiss(animated: true, completion: nil)
+    
+        case .checkEmptyTitleTxtFld(isEmptyValue: let empty):
+            addButton.isEnabled = empty
         }
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
-        interactor?.addNewItem(title: titleTxtFld.text!, detail: detailTxtFld.text!, date: datePicker.date)
+        interactor?.addNewItem(
+            title: titleTxtFld.text!,
+            detail: detailTxtFld.text!,
+            date: datePicker.date
+        )
         buttonIsSelected = true
     }
     
@@ -89,3 +102,11 @@ class ItemDetailViewController: UIViewController, ItemDetailViewProtocol {
     }
 }
 
+//MARK: - TextFieldDelegate
+extension ItemDetailViewController: UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        interactor?.checkEmptyTitleTxtFld(text: textField.text!, range: range, string: string)
+        return true
+    }
+}

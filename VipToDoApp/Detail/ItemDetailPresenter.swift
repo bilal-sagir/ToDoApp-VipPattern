@@ -15,6 +15,8 @@ class ItemDetailPresenter: ItemDetailPresenterProtocol{
             viewController?.handleOutput(.showItem(ItemDetailPresentation(item: item)))
         case .returnItemsScreen:
             viewController?.handleOutput(.returnItemsScreen)
+        case .checkEmptyTitleTxtFld(isEmptyValue: let isEmptyValue):
+            viewController?.handleOutput(.checkEmptyTitleTxtFld(isEmptyValue: isEmptyValue))
         }
     }
 }

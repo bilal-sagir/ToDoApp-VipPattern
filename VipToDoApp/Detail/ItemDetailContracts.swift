@@ -9,6 +9,7 @@ import Foundation
 enum ItemDetailPresenterOutput{
     case showItem(ItemDetailPresentation)
     case returnItemsScreen
+    case checkEmptyTitleTxtFld(isEmptyValue: Bool)
 }
 
 protocol ItemDetailViewProtocol: NSObject{
@@ -19,6 +20,7 @@ protocol ItemDetailInteractorProtocol{
     func viewDidLoad()
     func addNewItem(title: String, detail: String, date: Date)
     func editItem(newTitle: String, newDetail: String, newDate: Date)
+    func checkEmptyTitleTxtFld(text: String, range: NSRange, string: String)
 }
 
 enum ItemDetailRoute{
@@ -42,6 +44,7 @@ protocol ItemDetailRoutingProtocol{
 enum ItemDetailInteractorOutput{
     case showItem(Item)
     case returnItemsScreen
+    case checkEmptyTitleTxtFld(isEmptyValue: Bool)
 }
 
 protocol ItemDetailPresenterProtocol{
